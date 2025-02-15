@@ -6,67 +6,92 @@ const jsondata = {
     "subtitle": "Play on Your Own Terms",
     "description": "Cloudy Pad is a free, open source Cloud gaming solution. Deploy your own cloud gaming machine in minutes and play your own games on Steam, Lutris, Pegasus, and more!",
     "buttonText": "Start Gaming Now",
-    "userFeedback": "From 100+ happy gamers"
   },
-  "heroImage": "https://images.unsplash.com/photo-1598550476439-6847785fcea6",
-  "userAvatars": [
-    "https://randomuser.me/api/portraits/men/75.jpg",
-    "https://randomuser.me/api/portraits/women/45.jpg",
-    "https://randomuser.me/api/portraits/men/32.jpg"
-  ],
   "features": [
     {
-      "title": "What is Cloudy Pad",
-      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420",
+      "title": "Key Features 🎮",
       "descriptions": [
         {
-          "title": "Cloud Gaming",
-          "content": "Play your favorite games from anywhere with Cloudy Pad."
+          "title": "Your Own Games, Anywhere",
+          "content": "Run your own <b>Steam</b>, <b>Pegasus</b>, and <b>Lutris</b> games anywhere."
         },
         {
-          "title": "Multi-Platform Support",
-          "content": "Supports Steam, Lutrics, Pegasus, and more."
+          "title": "Deploy in the Cloud",
+          "content": "Deploy on <b>any existing machine or server</b> or directly on <b>AWS, Azure, Google Cloud, or Paperspace</b>."
         },
         {
-          "title": "Customizable Specs",
-          "content": "Tailor your gaming experience with customizable GPU, disk size, and more."
+          "title": "Moonlight Compatibility",
+          "content": "Compatible with Moonlight Streaming client."
         }
       ]
     },
     {
-      "title": "Why Choose Cloudy Pad",
-      "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3",
+      "title": "Free & Open Source 🐧",
       "descriptions": [
         {
-          "title": "Play Anywhere",
-          "content": "Access your games from any device, anywhere."
+          "title": "Free and Open Source",
+          "content": "<b>Cloudy Pad Core</b> is Free and Open Source."
         },
         {
-          "title": "Pay by the Hour",
-          "content": "Only pay for the time you use, keeping costs under control."
+          "title": "Get Support from and Contribute to the Community",
+          "content": "Join our <b>community</b> on <b>Discord</b> and <b>GitHub</b> to contribute and get support"
         },
         {
-          "title": "High Performance",
-          "content": "Experience top-tier gaming performance with customizable hardware."
+          "title": "Based on Open Source solutions",
+          "content": "Cloudy Pad leverages <b>Sunshine</b> and <b>Wolf</b> streaming servers."
         }
       ]
     },
     {
-      "title": "How to Start Gaming",
-      "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3",
+      "title": "🌥️ Deploy Anywhere in the Cloud",
       "descriptions": [
         {
-          "title": "Step 1",
-          "content": "Sign up for Cloudy Pad and choose your gaming specs."
+          "title": "Direct Cloud Deployment",
+          "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
         },
         {
-          "title": "Step 2",
-          "content": "Install your favorite gaming platforms like Steam or Lutrics."
+          "title": "As powerful as you need",
+          "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
         },
         {
-          "title": "Step 3",
-          "content": "Start playing your games instantly from any device."
-        }
+          "title": "Spot Instances",
+          "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
+        },
+        {
+          "title": "Stay in Control, pay by the hour",
+          "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
+        },
+      ]
+    },
+    {
+      "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
+      "descriptions": [
+        {
+          "title": "Local deployment",
+          "content": "Transform your home Desktop into a remote gaming instance."
+        },
+        {
+          "title": "Remote deployment via SSH",
+          "content": "Make your remote server into a Cloud Gaming instance."
+        },
+
+      ]
+    },
+    {
+      "title": "🚀 Cloudy Pad Gamer: Managed Solution",
+      "descriptions": [
+        {
+          "title": "Same experience, Lower price",
+          "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
+        },
+        {
+          "title": "No technical skills required",
+          "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
+        },
+        {
+          "title": "Advanced features",
+          "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
+        },
       ]
     }
   ],
@@ -133,10 +158,6 @@ const jsondata = {
       "answer": "Cloudy Pad supports Steam, Lutrics, Pegasus, and more, providing a seamless gaming experience across multiple platforms."
     }
   ],
-  "userFeedback": {
-    "title": "What Gamers Say About Cloudy Pad",
-    "subtitle": "Real feedback from our valued users"
-  },
   "faqSection": {
     "title": "Frequently Asked Questions About Cloudy Pad"
   },
@@ -176,7 +197,7 @@ export default function Home({ data = jsondata }) {
     <div className="min-h-screen">
       <nav className="flex items-center justify-between p-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="CloudyPad Logo" width={32} height={32} />
+          <img src="/crafteo-logo.png" alt="CloudyPad Logo" width={32} height={32} />
           <span className="font-semibold text-xl">{data?.name}</span>
         </div>
         <div className="flex items-center space-x-6">
@@ -189,79 +210,45 @@ export default function Home({ data = jsondata }) {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20 grid grid-cols-2 gap-12">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-6xl font-bold mb-6">{data.heroSection.title}</h1>
-          <h2 className="text-4xl font-semibold mb-4">{data.heroSection.subtitle}</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            {data.heroSection.description}
-          </p>
-          <Button className="w-fit text-lg px-8 py-6">
-            {data.heroSection.buttonText}
-          </Button>
-          <div className="flex items-center mt-8 space-x-4">
-            <div className="flex -space-x-2">
-              {data.userAvatars.map((avatar, index) => (
-                <img
-                  src={avatar}
-                  key={index}
-                  className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
-                />
-              ))}
-            </div>
-            <p className="text-sm text-gray-600">
-              {data.heroSection.userFeedback}
-            </p>
-          </div>
+      <section className="w-full bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-6xl font-bold mb-4">{data.heroSection.title}</h1>
+          <h2 className="text-4xl font-semibold">{data.heroSection.subtitle}</h2>
         </div>
-        <div className="relative">
-          <img
-            src={data.heroImage}
-            alt="AI Landing Page Generator"
-            width={600}
-            height={600}
-            className="rounded-lg shadow-xl h-[600px] w-[600px]"
-          />
+      </section>
+
+      <div className="w-full h-1 bg-gray-700"></div> {/* Separator */}
+
+      <section className="py-20 bg-gray-700 text-white text-center">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="mb-6 text-2xl">Cloudy Pad lets you play your own games without requiring a powerful gaming machine.</p> 
+          <p className="mb-6 text-2xl">Run your game in the Cloud and play anywhere using any device!</p>
+          <Button className="bg-blue-600 text-white font-bold text-lg px-8 py-4">Start Playing Now</Button>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-20">
-        {data.features.map((feature, index) => (
-          <div
-            key={index}
-            className={`max-w-7xl mx-auto px-4 mb-20 ${
-              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-            } flex flex-col lg:flex-row items-center gap-12`}
-          >
-            <div className="lg:w-1/2">
-              <img
-                src={feature.image}
-                alt={feature.title}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="lg:w-1/2">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {data.features.map((feature, index) => (
+            <div key={index} className="flex flex-col items-start gap-6">
               <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
               <div className="space-y-4 mb-4">
                 {feature.descriptions.map((desc, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="mt-1 text-green-500">✓</div>
-                    <div>
+                    <div className="space-y-2">
                       <h3 className="font-semibold">{desc.title}</h3>
-                      <p className="text-gray-600">{desc.content}</p>
+                      <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
                     </div>
                   </div>
                 ))}
               </div>
-              <Button>Ready To Try 👉</Button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
+
 
       {/* About Us Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
