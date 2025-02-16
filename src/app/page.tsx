@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const getStartedUrl = "https://cloudypad.gg/getting-started.html";
-const documentationUrl = "https://cloudypad.gg";
+const getStartedUrl = "https://docs.cloudypad.gg/getting-started.html";
+const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
 const discordUrl = "https://discord.gg/dCxDVfVnSD";
 const moonlightUrl = "https://moonlight-stream.org/";
