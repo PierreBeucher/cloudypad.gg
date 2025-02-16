@@ -9,170 +9,171 @@ const moonlightUrl = "https://moonlight-stream.org/";
 const sunshineUrl = "https://app.lizardbyte.dev/Sunshine/";
 const wolfUrl = "https://games-on-whales.github.io/wolf/stable/";
 
-const jsondata = {
-  "name": "Cloudy Pad",
-  "navLinks": [
-    {
-      "title": "🎮 <b>Start Playing</b>",
-      "url": getStartedUrl,
-    },
-    {
-      "title": "📖 Documentation",
-      "url": documentationUrl,
-    },
-    {
-      "title": "GitHub",
-      "url": githubUrl,
-      "imageLink": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-    },
-    {
-      "title": "Discord",
-      "url": discordUrl,
-      "imageLink": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg"
-    }
-  ],
-  "heroSection": {
-    "title": "Cloudy Pad",
-    "subtitle": "Play on Your Own Terms",
-    "description": "Cloudy Pad is a free, open source Cloud gaming solution. Deploy your own cloud gaming machine in minutes and play your own games on Steam, Lutris, Pegasus, and more!",
-    "buttonText": "Start Gaming Now",
-  },
-  "features": [
-    {
-      "title": "Your Games, Anywhere, Anyhow 🎮",
-      "descriptions": [
-        {
-          "title": "Multi-platform",
-          "content": "Run your own <b>Steam</b>, <b>Pegasus</b>, and <b>Lutris</b> games anywhere."
-        },
-        {
-          "title": "Deploy in the Cloud",
-          "content": "Deploy on <b>any existing machine or server</b> or directly on <b>AWS, Azure, Google Cloud, or Paperspace</b>."
-        },
-        {
-          "title": "Moonlight Compatibility",
-          "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>.`
-        }
-      ]
-    },
-    {
-      "title": "Free & Open Source 🐧",
-      "descriptions": [
-        {
-          "title": "Free and Open Source",
-          "content": `<b><a href='${githubUrl}'>Cloudy Pad Core</a></b> is Free and Open Source.`
-        },
-        {
-          "title": "Get Support from and Contribute to the Community",
-          "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to contribute and get support`
-        },
-        {
-          "title": "Based on Open Source solutions",
-          "content": `Cloudy Pad leverages <b><a href='${sunshineUrl}'>Sunshine</a></b> and <b><a href='${wolfUrl}'>Wolf</a></b> streaming servers.`
-        }
-      ]
-    },
-    {
-      "title": "🌥️ Deploy Anywhere in the Cloud",
-      "descriptions": [
-        {
-          "title": "Direct Cloud Deployment",
-          "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
-        },
-        {
-          "title": "As powerful as you need",
-          "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
-        },
-        {
-          "title": "Spot Instances",
-          "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
-        },
-        {
-          "title": "Stay in Control, pay by the hour",
-          "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
-        },
-      ]
-    },
-    {
-      "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
-      "descriptions": [
-        { 
-          "bullet": "ℹ️",
-          "title": "Coming soon !",
-          "content": "This feature is being implemented and should land in a few weeks."
-        },
-        {
-          "title": "Local deployment",
-          "content": "Transform your home Desktop into a remote gaming instance."
-        },
-        {
-          "title": "Remote deployment via SSH",
-          "content": "Make your remote server into a Cloud Gaming instance."
-        },
 
-      ]
-    },
-    // {
-    //   "title": "⚡ Cloudy Pad Gamer: Managed Solution",
-    //   "descriptions": [
-    //     {
-    //       "title": "Same experience, Lower price",
-    //       "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
-    //     },
-    //     {
-    //       "title": "No technical skills required",
-    //       "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
-    //     },
-    //     {
-    //       "title": "Advanced features",
-    //       "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
-    //     },
-    //   ]
-    // }
-  ],
-  "actionSection": {
-    "title": "Get Started with Cloudy Pad",
-    "features": [
-      // {
-      //   "title": "Watch demo video",
-      //   "description": "Watch our demo video to see how Cloudy Pad works and how to deploy your instance."
-      // },
+export default function Home() {
+
+  const data = {
+    "name": "Cloudy Pad",
+    "navLinks": [
       {
-        "title": "Install Cloudy Pad",
-        "description": "Follow our documentation to install Cloudy Pad and deploy your instance.",
-        "url": getStartedUrl
+        "title": "🎮 <b>Start Playing</b>",
+        "url": getStartedUrl,
       },
       {
-        "title": "Join the Community",
-        "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
-        "url": discordUrl
+        "title": "📖 Documentation",
+        "url": documentationUrl,
       },
       {
-        "title": "Documentation",
-        "description": "Checkout documentation to learn more about Cloudy Pad and how to deploy your instance.",
-        "url": documentationUrl
-      },
-    ],
-  },
-  "footer": {
-    "description": "Play on Your Own Terms!",
-    // "products": ["Cloudy Pad Core", "Cloudy Pad Gamer"],
-    // "legal": ["Privacy Policy", "Terms of Service"],
-    "social": [
-      {
-        "name": "GitHub", 
+        "title": "GitHub",
         "url": githubUrl,
+        "imageLink": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
       },
       {
-        "name": "Discord", 
+        "title": "Discord",
         "url": discordUrl,
-      },
+        "imageLink": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg"
+      }
     ],
-    "copyright": "© 2025 • Cloudy Pad All rights reserved."
-  }
-};
-
-export default function Home({ data = jsondata }) {
+    "heroSection": {
+      "title": "Cloudy Pad",
+      "subtitle": "Play on Your Own Terms",
+      "description": "Cloudy Pad is a free, open source Cloud gaming solution. Deploy your own cloud gaming machine in minutes and play your own games on Steam, Lutris, Pegasus, and more!",
+      "buttonText": "Start Gaming Now",
+    },
+    "features": [
+      {
+        "title": "Your Games, Anywhere, Anyhow 🎮",
+        "descriptions": [
+          {
+            "title": "Multi-platform",
+            "content": "Run your own <b>Steam</b>, <b>Pegasus</b>, and <b>Lutris</b> games anywhere."
+          },
+          {
+            "title": "Deploy in the Cloud",
+            "content": "Deploy on <b>any existing machine or server</b> or directly on <b>AWS, Azure, Google Cloud, or Paperspace</b>."
+          },
+          {
+            "title": "Moonlight Compatibility",
+            "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>.`
+          }
+        ]
+      },
+      {
+        "title": "Free & Open Source 🐧",
+        "descriptions": [
+          {
+            "title": "Free and Open Source",
+            "content": `<b><a href='${githubUrl}'>Cloudy Pad Core</a></b> is Free and Open Source.`
+          },
+          {
+            "title": "Get Support from and Contribute to the Community",
+            "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to contribute and get support`
+          },
+          {
+            "title": "Based on Open Source solutions",
+            "content": `Cloudy Pad leverages <b><a href='${sunshineUrl}'>Sunshine</a></b> and <b><a href='${wolfUrl}'>Wolf</a></b> streaming servers.`
+          }
+        ]
+      },
+      {
+        "title": "🌥️ Deploy Anywhere in the Cloud",
+        "descriptions": [
+          {
+            "title": "Direct Cloud Deployment",
+            "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
+          },
+          {
+            "title": "As powerful as you need",
+            "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
+          },
+          {
+            "title": "Spot Instances",
+            "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
+          },
+          {
+            "title": "Stay in Control, pay by the hour",
+            "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
+          },
+        ]
+      },
+      {
+        "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
+        "descriptions": [
+          { 
+            "bullet": "ℹ️",
+            "title": "Coming soon !",
+            "content": "This feature is being implemented and should land in a few weeks."
+          },
+          {
+            "title": "Local deployment",
+            "content": "Transform your home Desktop into a remote gaming instance."
+          },
+          {
+            "title": "Remote deployment via SSH",
+            "content": "Make your remote server into a Cloud Gaming instance."
+          },
+  
+        ]
+      },
+      // {
+      //   "title": "⚡ Cloudy Pad Gamer: Managed Solution",
+      //   "descriptions": [
+      //     {
+      //       "title": "Same experience, Lower price",
+      //       "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
+      //     },
+      //     {
+      //       "title": "No technical skills required",
+      //       "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
+      //     },
+      //     {
+      //       "title": "Advanced features",
+      //       "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
+      //     },
+      //   ]
+      // }
+    ],
+    "actionSection": {
+      "title": "Get Started with Cloudy Pad",
+      "features": [
+        // {
+        //   "title": "Watch demo video",
+        //   "description": "Watch our demo video to see how Cloudy Pad works and how to deploy your instance."
+        // },
+        {
+          "title": "Install Cloudy Pad",
+          "description": "Follow our documentation to install Cloudy Pad and deploy your instance.",
+          "url": getStartedUrl
+        },
+        {
+          "title": "Join the Community",
+          "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
+          "url": discordUrl
+        },
+        {
+          "title": "Documentation",
+          "description": "Checkout documentation to learn more about Cloudy Pad and how to deploy your instance.",
+          "url": documentationUrl
+        },
+      ],
+    },
+    "footer": {
+      "description": "Play on Your Own Terms!",
+      // "products": ["Cloudy Pad Core", "Cloudy Pad Gamer"],
+      // "legal": ["Privacy Policy", "Terms of Service"],
+      "social": [
+        {
+          "name": "GitHub", 
+          "url": githubUrl,
+        },
+        {
+          "name": "Discord", 
+          "url": discordUrl,
+        },
+      ],
+      "copyright": "© 2025 • Cloudy Pad All rights reserved."
+    }
+  };
 
   return (
     <div className="min-h-screen">
