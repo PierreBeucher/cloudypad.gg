@@ -202,8 +202,8 @@ export default function Home() {
 
       <section className="py-20 bg-gray-700 text-white text-center">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-6 text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine.</p> 
-          <p className="mb-6 text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud.</p>
+          <p className="mb-6 text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine</p> 
+          <p className="mb-6 text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud !</p>
           <Button className="bg-blue-600 text-white font-bold text-lg px-10 py-8">
             <a href={getStartedUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
           </Button>
