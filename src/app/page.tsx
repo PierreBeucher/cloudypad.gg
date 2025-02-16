@@ -1,6 +1,36 @@
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+
+const getStartedUrl = "https://cloudypad.gg/getting-started.html";
+const documentationUrl = "https://cloudypad.gg";
+const githubUrl = "https://github.com/PierreBeucher/cloudypad";
+const discordUrl = "https://discord.gg/dCxDVfVnSD";
+const moonlightUrl = "https://moonlight-stream.org/";
+const sunshineUrl = "https://app.lizardbyte.dev/Sunshine/";
+const wolfUrl = "https://games-on-whales.github.io/wolf/stable/";
+
 const jsondata = {
   "name": "Cloudy Pad",
-  "navLinks": ["Start playing!", "Documentation", "About", "Github"],
+  "navLinks": [
+    {
+      "title": "🎮 <b>Start Playing</b>",
+      "url": getStartedUrl,
+    },
+    {
+      "title": "📖 Documentation",
+      "url": documentationUrl,
+    },
+    {
+      "title": "GitHub",
+      "url": githubUrl,
+      "imageLink": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+    },
+    {
+      "title": "Discord",
+      "url": discordUrl,
+      "imageLink": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg"
+    }
+  ],
   "heroSection": {
     "title": "Cloudy Pad",
     "subtitle": "Play on Your Own Terms",
@@ -9,10 +39,10 @@ const jsondata = {
   },
   "features": [
     {
-      "title": "Key Features 🎮",
+      "title": "Your Games, Anywhere, Anyhow 🎮",
       "descriptions": [
         {
-          "title": "Your Own Games, Anywhere",
+          "title": "Multi-platform",
           "content": "Run your own <b>Steam</b>, <b>Pegasus</b>, and <b>Lutris</b> games anywhere."
         },
         {
@@ -21,7 +51,7 @@ const jsondata = {
         },
         {
           "title": "Moonlight Compatibility",
-          "content": "Compatible with Moonlight Streaming client."
+          "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>.`
         }
       ]
     },
@@ -30,15 +60,15 @@ const jsondata = {
       "descriptions": [
         {
           "title": "Free and Open Source",
-          "content": "<b>Cloudy Pad Core</b> is Free and Open Source."
+          "content": `<b><a href='${githubUrl}'>Cloudy Pad Core</a></b> is Free and Open Source.`
         },
         {
           "title": "Get Support from and Contribute to the Community",
-          "content": "Join our <b>community</b> on <b>Discord</b> and <b>GitHub</b> to contribute and get support"
+          "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to contribute and get support`
         },
         {
           "title": "Based on Open Source solutions",
-          "content": "Cloudy Pad leverages <b>Sunshine</b> and <b>Wolf</b> streaming servers."
+          "content": `Cloudy Pad leverages <b><a href='${sunshineUrl}'>Sunshine</a></b> and <b><a href='${wolfUrl}'>Wolf</a></b> streaming servers.`
         }
       ]
     },
@@ -66,6 +96,11 @@ const jsondata = {
     {
       "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
       "descriptions": [
+        { 
+          "bullet": "ℹ️",
+          "title": "Coming soon !",
+          "content": "This feature is being implemented and should land in a few weeks."
+        },
         {
           "title": "Local deployment",
           "content": "Transform your home Desktop into a remote gaming instance."
@@ -77,122 +112,68 @@ const jsondata = {
 
       ]
     },
-    {
-      "title": "🚀 Cloudy Pad Gamer: Managed Solution",
-      "descriptions": [
-        {
-          "title": "Same experience, Lower price",
-          "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
-        },
-        {
-          "title": "No technical skills required",
-          "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
-        },
-        {
-          "title": "Advanced features",
-          "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
-        },
-      ]
-    }
+    // {
+    //   "title": "⚡ Cloudy Pad Gamer: Managed Solution",
+    //   "descriptions": [
+    //     {
+    //       "title": "Same experience, Lower price",
+    //       "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
+    //     },
+    //     {
+    //       "title": "No technical skills required",
+    //       "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
+    //     },
+    //     {
+    //       "title": "Advanced features",
+    //       "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
+    //     },
+    //   ]
+    // }
   ],
-  "aboutUs": {
-    "title": "About Cloudy Pad",
-    "subtitle": "The Future of Cloud Gaming",
+  "actionSection": {
+    "title": "Get Started with Cloudy Pad",
     "features": [
+      // {
+      //   "title": "Watch demo video",
+      //   "description": "Watch our demo video to see how Cloudy Pad works and how to deploy your instance."
+      // },
       {
-        "icon": "Cloud",
-        "title": "Cloud-Powered Gaming",
-        "description": "Leverage the power of the cloud to play your favorite games from anywhere."
+        "title": "Install Cloudy Pad",
+        "description": "Follow our documentation to install Cloudy Pad and deploy your instance.",
+        "url": getStartedUrl
       },
       {
-        "icon": "Settings",
-        "title": "Customizable Hardware",
-        "description": "Tailor your gaming experience with customizable GPU, disk size, and more."
+        "title": "Join the Community",
+        "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
+        "url": discordUrl
       },
       {
-        "icon": "Clock",
-        "title": "Pay by the Hour",
-        "description": "Only pay for the time you use, keeping your gaming costs under control."
+        "title": "Documentation",
+        "description": "Checkout documentation to learn more about Cloudy Pad and how to deploy your instance.",
+        "url": documentationUrl
       },
-      {
-        "icon": "Monitor",
-        "title": "Multi-Platform Support",
-        "description": "Supports Steam, Lutrics, Pegasus, and more for a seamless gaming experience."
-      }
     ],
-    "ctaTitle": "Experience the Future of Gaming",
-    "ctaDescription": "Join thousands of gamers who have already transformed their gaming experience with Cloudy Pad. Our cloud-powered platform makes it easier than ever to play your favorite games from anywhere.",
-    "ctaButtons": ["Start Gaming Now", "Watch Demo"]
-  },
-  "testimonials": [
-    {
-      "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
-      "content": "Cloudy Pad has completely changed how I game. I can now play my favorite games from anywhere, and the customizable specs are a game-changer.",
-      "name": "John Doe",
-      "position": "Gaming Enthusiast"
-    },
-    {
-      "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
-      "content": "As a busy professional, I love that I can pay by the hour and only use what I need. Cloudy Pad is the perfect solution for my gaming needs.",
-      "name": "Jane Smith",
-      "position": "Professional Gamer"
-    },
-    {
-      "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-      "content": "The multi-platform support is fantastic. I can switch between Steam and Lutrics seamlessly. Cloudy Pad is a must-have for any gamer.",
-      "name": "Mike Johnson",
-      "position": "Tech Reviewer"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "How much does Cloudy Pad cost?",
-      "answer": "Cloudy Pad offers a pay-by-the-hour pricing model, so you only pay for the time you use. Customizable specs may affect the overall cost."
-    },
-    {
-      "question": "Can I use Cloudy Pad on multiple devices?",
-      "answer": "Yes, Cloudy Pad is accessible from any device with an internet connection, allowing you to game from anywhere."
-    },
-    {
-      "question": "What platforms does Cloudy Pad support?",
-      "answer": "Cloudy Pad supports Steam, Lutrics, Pegasus, and more, providing a seamless gaming experience across multiple platforms."
-    }
-  ],
-  "faqSection": {
-    "title": "Frequently Asked Questions About Cloudy Pad"
-  },
-  "ctaSection": {
-    "title": "Ready to Start Gaming?",
-    "description": "Start for free. No credit card required.",
-    "buttonText": "Get Started Free"
   },
   "footer": {
-    "description": "Cloudy Pad is a cloud gaming platform that allows you to play your favorite games from anywhere.",
-    "products": ["Cloud Gaming", "Cloudy Pad", "GameSpec"],
-    "legal": ["Privacy Policy", "Terms of Service"],
-    "social": ["Twitter", "GitHub", "Discord", "Telegram"],
-    "copyright": "© 2024 • Cloudy Pad All rights reserved."
+    "description": "Play on Your Own Terms!",
+    // "products": ["Cloudy Pad Core", "Cloudy Pad Gamer"],
+    // "legal": ["Privacy Policy", "Terms of Service"],
+    "social": [
+      {
+        "name": "GitHub", 
+        "url": githubUrl,
+      },
+      {
+        "name": "Discord", 
+        "url": discordUrl,
+      },
+    ],
+    "copyright": "© 2025 • Cloudy Pad All rights reserved."
   }
 };
 
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  ArrowRight,
-  Bell,
-  File,
-  HardDriveDownloadIcon,
-  Settings,
-} from "lucide-react";
-
-
 export default function Home({ data = jsondata }) {
+
   return (
     <div className="min-h-screen">
       <nav className="flex items-center justify-between p-4 max-w-7xl mx-auto">
@@ -202,120 +183,73 @@ export default function Home({ data = jsondata }) {
         </div>
         <div className="flex items-center space-x-6">
           {data.navLinks.map((link, index) => (
-            <a href="#" key={index}>
-              {link}
+            <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+              {link.imageLink && <img src={link.imageLink} width={25} height={25} />}
+              <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
             </a>
           ))}
-          <Button>Sign In</Button>
+          {/* <Button>Sign In</Button> */}
         </div>
       </nav>
 
-      <section className="w-full bg-gray-800 text-white py-12">
+      <section className="w-full bg-gray-800 text-white py-12" style={{ backgroundImage: "url('/gamepad-cloud.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-4">{data.heroSection.title}</h1>
           <h2 className="text-4xl font-semibold">{data.heroSection.subtitle}</h2>
         </div>
       </section>
 
-      <div className="w-full h-1 bg-gray-700"></div> {/* Separator */}
-
       <section className="py-20 bg-gray-700 text-white text-center">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-6 text-2xl">Cloudy Pad lets you play your own games without requiring a powerful gaming machine.</p> 
-          <p className="mb-6 text-2xl">Run your game in the Cloud and play anywhere using any device!</p>
-          <Button className="bg-blue-600 text-white font-bold text-lg px-8 py-4">Start Playing Now</Button>
+          <p className="mb-6 text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine.</p> 
+          <p className="mb-6 text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud.</p>
+          <Button className="bg-blue-600 text-white font-bold text-lg px-10 py-8">
+            <a href={getStartedUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
+          </Button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {data.features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-start gap-6">
-              <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
-              <div className="space-y-4 mb-4">
-                {feature.descriptions.map((desc, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="mt-1 text-green-500">✓</div>
-                    <div className="space-y-2">
-                      <h3 className="font-semibold">{desc.title}</h3>
-                      <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-      {/* About Us Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">{data.aboutUs.title}</h2>
-            <p className="text-xl text-gray-600">{data.aboutUs.subtitle}</p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            {data.aboutUs.features.map((feature, index) => (
-              <div className="bg-white p-8 rounded-lg shadow-sm" key={index}>
-                <feature.icon className="mb-4 w-10 h-10 text-primary" />
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {data.features.map((feature, index) => (
+              <div key={index} className="flex flex-col items-start gap-6 bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
+                <div className="space-y-4 mb-4">
+                  {feature.descriptions.map((desc, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="mt-1 text-green-500">{ desc.bullet ? desc.bullet : '✓'}</div>
+                      <div className="space-y-2">
+                        <h3 className="font-semibold">{desc.title}</h3>
+                        <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
-
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-6">{data.aboutUs.ctaTitle}</h3>
-            <p className="text-gray-600 mb-8">{data.aboutUs.ctaDescription}</p>
-            <div className="flex justify-center gap-4">
-              {data.aboutUs.ctaButtons.map((buttonText, index) => (
-                <Button key={index} className="px-8 py-6">
-                  {buttonText}
-                </Button>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          {data.faqSection.title}
-        </h2>
-        <Accordion type="single" collapsible>
-          {data.faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="font-bold text-lg">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">{data.actionSection.title}</h2>
+          </div>
 
-      {/* CTA */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-muted">
-            {data.ctaSection.title}
-          </h2>
-          <p className="text-lg mb-8 text-muted">
-            {data.ctaSection.description}
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" variant="outline">
-              {data.ctaSection.buttonText}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+          <div className={`grid md:grid-cols-${data.actionSection.features.length} gap-8 mb-16`}>
+            {data.actionSection.features.map((feature, index) => (
+              <a href={feature.url} className="block bg-white p-8 rounded-lg shadow-sm" key={index}>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
+      
 
       {/* Footer */}
       <footer className="bg-primary-foreground py-12">
@@ -324,8 +258,8 @@ export default function Home({ data = jsondata }) {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Image
-                  src="/logo.png"
-                  alt="PageGen Logo"
+                  src="/crafteo-logo.png"
+                  alt="CloudyPad Logo"
                   width={32}
                   height={32}
                 />
@@ -334,8 +268,8 @@ export default function Home({ data = jsondata }) {
               <p className="text-gray-600">{data.footer.description}</p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Products</h3>
-              <ul className="space-y-2">
+              {/* <h3 className="font-semibold mb-4">Products</h3> */}
+              {/* <ul className="space-y-2">
                 {data.footer.products.map((product, index) => (
                   <li key={index}>
                     <a href="#" className="text-gray-600 hover:text-gray-900">
@@ -343,11 +277,11 @@ export default function Home({ data = jsondata }) {
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2">
+              {/* <h3 className="font-semibold mb-4">Legal</h3> */}
+              {/* <ul className="space-y-2">
                 {data.footer.legal.map((legalItem, index) => (
                   <li key={index}>
                     <a href="#" className="text-gray-600 hover:text-gray-900">
@@ -355,7 +289,7 @@ export default function Home({ data = jsondata }) {
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
             <div>
               <h3 className="font-semibold mb-4">Social</h3>
@@ -363,10 +297,10 @@ export default function Home({ data = jsondata }) {
                 {data.footer.social.map((social, index) => (
                   <a
                     key={index}
-                    href="#"
+                    target="_blank" href={social.url}
                     className="text-gray-600 hover:text-gray-900"
                   >
-                    {social}
+                    {social.name}
                   </a>
                 ))}
               </div>
