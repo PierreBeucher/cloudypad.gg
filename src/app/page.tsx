@@ -240,7 +240,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-4">{data.actionSection.title}</h2>
           </div>
 
-          <div className={`grid md:grid-cols-${data.actionSection.features.length} gap-8 mb-16`}>
+          <div className={`grid md:grid-cols-3 gap-8 mb-16`}>
             {data.actionSection.features.map((feature, index) => (
               <a href={feature.url} className="block bg-white p-8 rounded-lg shadow-sm" key={index}>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
