@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const getStartedUrl = "https://docs.cloudypad.gg/getting-started.html";
 const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
-const discordUrl = "https://discord.gg/dCxDVfVnSD";
+const discordUrl = "https://discord.com/invite/QATA3b9TTa";
 const moonlightUrl = "https://moonlight-stream.org/";
 const sunshineUrl = "https://app.lizardbyte.dev/Sunshine/";
 const wolfUrl = "https://games-on-whales.github.io/wolf/stable/";
