@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const getStartedUrl = "https://docs.cloudypad.gg/getting-started.html";
+const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
 const discordUrl = "https://discord.com/invite/QATA3b9TTa";
@@ -17,7 +17,7 @@ export default function Home() {
     "navLinks": [
       {
         "title": "🎮 <b>Start Playing</b>",
-        "url": getStartedUrl,
+        "url": callToActionUrl,
       },
       {
         "title": "📖 Documentation",
@@ -42,37 +42,41 @@ export default function Home() {
     },
     "features": [
       {
-        "title": "Your Games, Anywhere, Anyhow 🎮",
+        "title": "Play on Powerful Cloud Machines 🎮",
         "descriptions": [
           {
-            "title": "Multi-platform",
-            "content": "Run your own <b>Steam</b>, <b>Pegasus</b>, and <b>Lutris</b> games anywhere."
+            "title": "Free trial for beta users",
+            "content": `<a href='${callToActionUrl}'><u>Join Cloudy Pad beta</u></a> and get <b>2 hours free trial</b> !`
           },
           {
-            "title": "Deploy in the Cloud",
-            "content": "Deploy on <b>any existing machine or server</b> or directly on <b>AWS, Azure, Google Cloud, or Paperspace</b>."
+            "title": "Bring your own Steam games",
+            "content": "Install and play <b>your own Steam</b> games without limitations"
+          },
+          {
+            "title": "Pay by the hour, no subscription required",
+            "content": "Choose your instance power level and pay by the hour"
           },
           {
             "title": "Moonlight Compatibility",
-            "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>.`
+            "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>`
           }
         ]
       },
       {
-        "title": "Free & Open Source 🐧",
+        "title": "Free & Open Source DIY solution 🐧",
         "descriptions": [
           {
             "title": "Free and Open Source",
-            "content": `<b><a href='${githubUrl}'>Cloudy Pad Core</a></b> is Free and Open Source.`
+            "content": `<b><a href='${githubUrl}'>Cloudy Pad CLI</a></b> is a Free and Open Source project to deploy your own Cloud Gaming instance`
+          },
+          {
+            "title": "Deploy anywhere in the Cloud",
+            "content": "Play using powerful machines on <b>AWS, Azure, Google Cloud and other providers</b>."
           },
           {
             "title": "Get Support from and Contribute to the Community",
             "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to contribute and get support`
           },
-          {
-            "title": "Based on Open Source solutions",
-            "content": `Cloudy Pad leverages <b><a href='${sunshineUrl}'>Sunshine</a></b> and <b><a href='${wolfUrl}'>Wolf</a></b> streaming servers.`
-          }
         ]
       },
       {
@@ -136,24 +140,20 @@ export default function Home() {
     "actionSection": {
       "title": "Get Started with Cloudy Pad",
       "features": [
-        // {
-        //   "title": "Watch demo video",
-        //   "description": "Watch our demo video to see how Cloudy Pad works and how to deploy your instance."
-        // },
         {
-          "title": "Install Cloudy Pad",
-          "description": "Follow our documentation to install Cloudy Pad and deploy your instance.",
-          "url": getStartedUrl
+          "title": "DIY with Cloudy Pad CLI",
+          "description": "Use Cloudy Pad CLI, a Free and Open Source project to deploy your own instance",
+          "url": documentationUrl
         },
         {
-          "title": "Join the Community",
+          "title": "Join Cloudy Pad beta",
+          "description": "Deploy your instance in a few clicks and play your own Steam games",
+          "url": callToActionUrl
+        },
+        {
+          "title": "Get in touch with the Community",
           "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
           "url": discordUrl
-        },
-        {
-          "title": "Documentation",
-          "description": "Checkout documentation to learn more about Cloudy Pad and how to deploy your instance.",
-          "url": documentationUrl
         },
       ],
     },
@@ -205,7 +205,7 @@ export default function Home() {
           <p className="mb-6 text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine</p> 
           <p className="mb-6 text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud !</p>
           <Button className="bg-blue-600 text-white font-bold text-lg px-10 py-8">
-            <a href={getStartedUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
+            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
           </Button>
         </div>
       </section>
@@ -242,7 +242,7 @@ export default function Home() {
 
           <div className={`grid md:grid-cols-3 gap-8 mb-16`}>
             {data.actionSection.features.map((feature, index) => (
-              <a href={feature.url} className="block bg-white p-8 rounded-lg shadow-sm" key={index}>
+              <a href={feature.url} className="block bg-white p-8 rounded-lg shadow-sm text-center" key={index}>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </a>
@@ -269,28 +269,8 @@ export default function Home() {
               <p className="text-gray-600">{data.footer.description}</p>
             </div>
             <div>
-              {/* <h3 className="font-semibold mb-4">Products</h3> */}
-              {/* <ul className="space-y-2">
-                {data.footer.products.map((product, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-600 hover:text-gray-900">
-                      {product}
-                    </a>
-                  </li>
-                ))}
-              </ul> */}
             </div>
             <div>
-              {/* <h3 className="font-semibold mb-4">Legal</h3> */}
-              {/* <ul className="space-y-2">
-                {data.footer.legal.map((legalItem, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-600 hover:text-gray-900">
-                      {legalItem}
-                    </a>
-                  </li>
-                ))}
-              </ul> */}
             </div>
             <div>
               <h3 className="font-semibold mb-4">Social</h3>
