@@ -6,9 +6,6 @@ const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
 const discordUrl = "https://discord.com/invite/QATA3b9TTa";
 const moonlightUrl = "https://moonlight-stream.org/";
-const sunshineUrl = "https://app.lizardbyte.dev/Sunshine/";
-const wolfUrl = "https://games-on-whales.github.io/wolf/stable/";
-
 
 export default function Home() {
 
