@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="w-full bg-gray-800 text-white py-12" style={{ backgroundImage: "url('/gamepad-cloud.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
+      <section className="w-full bg-gray-800 text-white py-32" style={{ backgroundImage: "url('/gamepad-4.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-4">{data.heroSection.title}</h1>
           <h2 className="text-4xl font-semibold">{data.heroSection.subtitle}</h2>
