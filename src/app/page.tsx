@@ -285,7 +285,11 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t mt-12 pt-8 text-center text-gray-600">
-            <p>{data.footer.copyright}</p>
+            <p>
+              {data.footer.copyright}
+              {" "}|{" "}
+              <a href="/privacy" className="underline hover:text-gray-900" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </p>
           </div>
         </div>
       </footer>
