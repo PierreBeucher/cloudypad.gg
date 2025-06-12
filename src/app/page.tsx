@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
 
 const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
@@ -8,7 +10,6 @@ const discordUrl = "https://discord.com/invite/QATA3b9TTa";
 const moonlightUrl = "https://moonlight-stream.org/";
 
 export default function Home() {
-
   const data = {
     "name": "Cloudy Pad",
     "navLinks": [
@@ -172,55 +173,116 @@ export default function Home() {
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [visibleLinks, setVisibleLinks] = useState([0, 1, 2, 3]);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width >= 800) {
+        setVisibleLinks([0, 1, 2, 3]); // All
+      } else if (width >= 700) {
+        setVisibleLinks([0, 1, 2]); // Hide Discord
+      } else if (width >= 600) {
+        setVisibleLinks([0, 1]); // Hide GitHub, Discord
+      } else if (width >= 400) {
+        setVisibleLinks([0]); // Only Start Playing
+      } else {
+        setVisibleLinks([]); // Hide all
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const alwaysVisible = visibleLinks;
+  const hiddenLinks = data.navLinks.map((_, i) => i).filter(i => !alwaysVisible.includes(i));
+
   return (
     <div className="min-h-screen">
-      <nav className="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      {/* Responsive Navigation */}
+      <nav className="flex flex-wrap items-center justify-between p-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-2">
           <img src="/crafteo-logo.png" alt="CloudyPad Logo" width={32} height={32} />
           <span className="font-semibold text-xl">{data?.name}</span>
         </div>
         <div className="flex items-center space-x-6">
-          {data.navLinks.map((link, index) => (
-            <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-              {link.imageLink && <img src={link.imageLink} width={25} height={25} />}
-              <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
-            </a>
-          ))}
-          {/* <Button>Sign In</Button> */}
+          {alwaysVisible.map(index => {
+            const link = data.navLinks[index];
+            return (
+              <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-lg">
+                {link.imageLink && <img src={link.imageLink} width={32} height={32} />}
+                <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+              </a>
+            );
+          })}
+          {hiddenLinks.length > 0 && (
+            <div className="relative">
+              <button
+                className="text-gray-700 focus:outline-none px-2"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle navigation"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+              </button>
+              {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
+                  {hiddenLinks.map(index => {
+                    const link = data.navLinks[index];
+                    return (
+                      <a
+                        href={link.url}
+                        key={index}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 p-2 border-b last:border-b-0 hover:bg-gray-100"
+                      >
+                        {link.imageLink && <img src={link.imageLink} width={25} height={25} />}
+                        <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </nav>
 
-      <section className="w-full bg-gray-800 text-white py-32" style={{ backgroundImage: "url('/gamepad-cloud-2.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
+      {/* Hero Section */}
+      <section className="w-full bg-gray-800 text-white py-20 sm:py-24 md:py-32" style={{ backgroundImage: "url('/gamepad-cloud-2.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-6xl font-bold mb-4">{data.heroSection.title}</h1>
-          <h2 className="text-4xl font-semibold">{data.heroSection.subtitle}</h2>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">{data.heroSection.title}</h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{data.heroSection.subtitle}</h2>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-700 text-white text-center">
+      {/* Tagline Section */}
+      <section className="py-10 sm:py-16 md:py-20 bg-gray-700 text-white text-center">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-6 text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine</p> 
-          <p className="mb-6 text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud !</p>
-          <Button className="bg-blue-600 text-white font-bold text-lg px-10 py-8">
+          <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine</p> 
+          <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud !</p>
+          <Button className="bg-blue-600 text-white font-bold text-base sm:text-lg px-6 sm:px-10 py-8 mt-4">
             <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
           </Button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {data.features.map((feature, index) => (
-              <div key={index} className="flex flex-col items-start gap-6 bg-white p-8 rounded-lg shadow-sm">
-                <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
-                <div className="space-y-4 mb-4">
+              <div key={index} className="flex flex-col items-start gap-4 sm:gap-6 bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">{feature.title}</h2>
+                <div className="space-y-2 sm:space-y-4 mb-2 sm:mb-4">
                   {feature.descriptions.map((desc, i) => (
-                    <div key={i} className="flex items-start gap-3">
+                    <div key={i} className="flex items-start gap-2 sm:gap-3">
                       <div className="mt-1 text-green-500">{ desc.bullet ? desc.bullet : '✓'}</div>
-                      <div className="space-y-2">
-                        <h3 className="font-semibold">{desc.title}</h3>
-                        <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
+                      <div className="space-y-1 sm:space-y-2">
+                        <h3 className="font-semibold text-base sm:text-lg">{desc.title}</h3>
+                        <p className="text-gray-800 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
                       </div>
                     </div>
                   ))}
@@ -231,30 +293,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* Action Section */}
+      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">{data.actionSection.title}</h2>
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{data.actionSection.title}</h2>
           </div>
 
-          <div className={`grid md:grid-cols-3 gap-8 mb-16`}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-16">
             {data.actionSection.features.map((feature, index) => (
-              <a href={feature.url} className="block bg-white p-8 rounded-lg shadow-sm text-center" key={index}>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+              <a href={feature.url} className="block bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm text-center" key={index}>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm sm:text-base">{feature.description}</p>
               </a>
             ))}
           </div>
         </div>
       </section>
-      
 
       {/* Footer */}
-      <footer className="bg-primary-foreground py-12">
+      <footer className="bg-primary-foreground py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="flex items-center space-x-2 mb-2 sm:mb-4">
                 <Image
                   src="/crafteo-logo.png"
                   alt="CloudyPad Logo"
@@ -263,20 +325,18 @@ export default function Home() {
                 />
                 <span className="font-semibold">{data?.name}</span>
               </div>
-              <p className="text-gray-600">{data.footer.description}</p>
+              <p className="text-gray-600 text-sm sm:text-base text-center sm:text-left">{data.footer.description}</p>
             </div>
-            <div>
-            </div>
-            <div>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Social</h3>
-              <div className="flex space-x-4">
+            <div></div>
+            <div></div>
+            <div className="flex flex-col items-center sm:items-start">
+              <h3 className="font-semibold mb-2 sm:mb-4">Social</h3>
+              <div className="flex space-x-2 sm:space-x-4 justify-center sm:justify-start w-full">
                 {data.footer.social.map((social, index) => (
                   <a
                     key={index}
                     target="_blank" href={social.url}
-                    className="text-gray-600 hover:text-gray-900"
+                    className="text-gray-600 hover:text-gray-900 text-sm sm:text-base"
                   >
                     {social.name}
                   </a>
@@ -284,7 +344,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="border-t mt-12 pt-8 text-center text-gray-600">
+          <div className="border-t mt-8 sm:mt-12 pt-4 sm:pt-8 text-center text-gray-600 text-xs sm:text-base">
             <p>
               {data.footer.copyright}
               {" "}|{" "}
