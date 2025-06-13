@@ -35,28 +35,26 @@ export default function Home() {
     "heroSection": {
       "title": "Cloudy Pad",
       "subtitle": "Play on Your Own Terms",
-      "description": "Cloudy Pad is a free, open source Cloud gaming solution. Deploy your own cloud gaming machine in minutes and play your own games on Steam, Lutris, Pegasus, and more!",
-      "buttonText": "Start Gaming Now",
     },
     "features": [
       {
-        "title": "Play on Powerful Cloud Machines 🎮",
+        "title": "How it Works",
         "descriptions": [
           {
-            "title": "Free trial for beta users",
-            "content": `<a href='${callToActionUrl}'><u>Join Cloudy Pad beta</u></a> and get <b>2 hours free trial</b> !`
+            "title": "Signup and create your instance",
+            "content": "Choose from a range of powerful cloud machines matching your needs and budget"
           },
           {
-            "title": "Bring your own Steam games",
-            "content": "Install and play <b>your own Steam</b> games without limitations"
+            "title": "Connect and install your Steam games",
+            "content": "Install and play your own Steam games - all your library is available !"
           },
           {
-            "title": "Pay by the hour, no subscription required",
-            "content": "Choose your instance power level and pay by the hour"
+            "title": "Enjoy Gaming in high resolution !",
+            "content": "The game runs on your powerful cloud machine and streams at home to your device"
           },
           {
-            "title": "Moonlight Compatibility",
-            "content": `Compatible with <a href='${moonlightUrl}'>Moonlight Streaming client</a>`
+            "title": "Join the Community",
+            "content": "Get support directly from the Founder and the community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b>"
           }
         ]
       },
@@ -64,59 +62,63 @@ export default function Home() {
         "title": "Free & Open Source DIY solution 🐧",
         "descriptions": [
           {
-            "title": "Free and Open Source",
-            "content": `<b><a href='${githubUrl}'>Cloudy Pad CLI</a></b> is a Free and Open Source project to deploy your own Cloud Gaming instance`
+            "title": "Deploy your own instance",
+            "content": `<b><a href='${githubUrl}'>Cloudy Pad CLI</a></b> is a Free and Open Source tool to deploy on your own Cloud provider account`
           },
           {
-            "title": "Deploy anywhere in the Cloud",
-            "content": "Play using powerful machines on <b>AWS, Azure, Google Cloud and other providers</b>."
+            "title": "Supports various Cloud providers",
+            "content": "Play using powerful machines on AWS, Azure, Google Cloud, Paperspace or Scaleway."
           },
           {
-            "title": "Get Support from and Contribute to the Community",
-            "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to contribute and get support`
+            "title": "Get Support from the Community",
+            "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to get help setting up your instance`
+          },
+          {
+            "title": "Based on Open Source solutions",
+            "content": "Cloudy Pad is based on Open Source solutions like <b><a href='https://github.com/moonlight-stream'>Moonlight</a></b> and <b><a href='https://github.com/LizardByte/Sunshine'>Sunshine</a></b>"
           },
         ]
       },
-      {
-        "title": "🌥️ Deploy Anywhere in the Cloud",
-        "descriptions": [
-          {
-            "title": "Direct Cloud Deployment",
-            "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
-          },
-          {
-            "title": "As powerful as you need",
-            "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
-          },
-          {
-            "title": "Spot Instances",
-            "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
-          },
-          {
-            "title": "Stay in Control, pay by the hour",
-            "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
-          },
-        ]
-      },
-      {
-        "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
-        "descriptions": [
-          { 
-            "bullet": "ℹ️",
-            "title": "Coming soon !",
-            "content": "This feature is being implemented and should land in a few weeks."
-          },
-          {
-            "title": "Local deployment",
-            "content": "Transform your home Desktop into a remote gaming instance."
-          },
-          {
-            "title": "Remote deployment via SSH",
-            "content": "Make your remote server into a Cloud Gaming instance."
-          },
+      // {
+      //   "title": "🌥️ Deploy Anywhere in the Cloud",
+      //   "descriptions": [
+      //     {
+      //       "title": "Direct Cloud Deployment",
+      //       "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
+      //     },
+      //     {
+      //       "title": "As powerful as you need",
+      //       "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
+      //     },
+      //     {
+      //       "title": "Spot Instances",
+      //       "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
+      //     },
+      //     {
+      //       "title": "Stay in Control, pay by the hour",
+      //       "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
+      //     },
+      //   ]
+      // },
+      // {
+      //   "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
+      //   "descriptions": [
+      //     { 
+      //       "bullet": "ℹ️",
+      //       "title": "Coming soon !",
+      //       "content": "This feature is being implemented and should land in a few weeks."
+      //     },
+      //     {
+      //       "title": "Local deployment",
+      //       "content": "Transform your home Desktop into a remote gaming instance."
+      //     },
+      //     {
+      //       "title": "Remote deployment via SSH",
+      //       "content": "Make your remote server into a Cloud Gaming instance."
+      //     },
   
-        ]
-      },
+      //   ]
+      // },
       // {
       //   "title": "⚡ Cloudy Pad Gamer: Managed Solution",
       //   "descriptions": [
@@ -141,19 +143,51 @@ export default function Home() {
         {
           "title": "DIY with Cloudy Pad CLI",
           "description": "Use Cloudy Pad CLI, a Free and Open Source project to deploy your own instance",
-          "url": documentationUrl
+          "url": documentationUrl,
+          "size": "small"
         },
         {
-          "title": "Join Cloudy Pad beta",
+          "title": "Start Playing Now",
           "description": "Deploy your instance in a few clicks and play your own Steam games",
-          "url": callToActionUrl
+          "url": callToActionUrl,
+          "size": "large"
         },
         {
-          "title": "Get in touch with the Community",
+          "title": "Join the Community",
           "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
-          "url": discordUrl
+          "url": discordUrl,
+          "size": "small"
         },
       ],
+    },
+    "faq": {
+      "title": "FAQ",
+      "questions": [
+        {
+          "question": "What are the requirements to use Cloudy Pad?",
+          "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/'>Moonlight client</a></b>, and a Steam account with your games."
+        },
+        {  
+          "question": "Do I need a powerful machine or a gaming PC to use Cloudy Pad?",
+          "answer": "<b>No, you don't need a powerful machine or a gaming PC to use Cloudy Pad</b>. You game will run on a powerful cloud machine and streams at home to your device, even small devices like phones, tablets or low-end laptops."
+        },
+        {
+          "question": "Do you offer a free trial?",
+          "answer": `During the Beta new users are elligible to <b>5 hours of free trial</b>. Just <b><a href='${callToActionUrl}'>Create an account</a></b> and follow the instructions to get your free trial !`
+        },
+        {
+          "question": "What games are supported?",
+          "answer": "Any Steam game which works natively on Linux. Vast majority of Windows games are supported with Proton (a Steam compatibility layer which is also used by the Steam Deck). See <b><a href='https://www.protondb.com/'>ProtonDB</a></b> for a list of supported Windows games."
+        },
+        {
+          "question": "Are my game data and saves games persisted across sessions?",
+          "answer": "Of course ! Your game data and saves are persisted when you stop your instance. As most Steam games support Cloud sync, you'll also be able to pick up where you left off from another machine."
+        },
+        {
+          "question": "Will my existing game saves be available on Cloudy Pad ?",
+          "answer": "Most Steam games support Cloud sync - in which case your saves will be available on Cloudy Pad after you installed your game."
+        }
+      ]
     },
     "footer": {
       "description": "Play on Your Own Terms!",
@@ -259,11 +293,13 @@ export default function Home() {
       </section>
 
       {/* Tagline Section */}
-      <section className="py-10 sm:py-16 md:py-20 bg-gray-700 text-white text-center">
+      <section className="py-12 sm:py-20 md:py-24 bg-gray-700 text-white text-center">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl">Cloudy Pad lets you play <b>your own games</b> without requiring a powerful gaming machine</p> 
-          <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl"><b>Play anywhere from any device</b> by running your game in the Cloud !</p>
-          <Button className="bg-blue-600 text-white font-bold text-base sm:text-lg px-6 sm:px-10 py-8 mt-4">
+          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restrictions</p> 
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Play anywhere from any device: MacOS, Windows, Linux, SmartTV, Phone, Tablet...</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 1080p 60+ FPS gaming, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
+          <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10 mt-6">
             <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
           </Button>
         </div>
@@ -275,11 +311,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {data.features.map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-4 sm:gap-6 bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">{feature.title}</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 w-full text-center">{feature.title}</h2>
                 <div className="space-y-2 sm:space-y-4 mb-2 sm:mb-4">
                   {feature.descriptions.map((desc, i) => (
                     <div key={i} className="flex items-start gap-2 sm:gap-3">
-                      <div className="mt-1 text-green-500">{ desc.bullet ? desc.bullet : '✓'}</div>
+                      <div className="mt-1 text-green-500">✓</div>
                       <div className="space-y-1 sm:space-y-2">
                         <h3 className="font-semibold text-base sm:text-lg">{desc.title}</h3>
                         <p className="text-gray-800 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
@@ -287,6 +323,29 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10">
+              <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{data.faq.title}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+            {data.faq.questions.map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">{item.question}</h3>
+                <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
               </div>
             ))}
           </div>
@@ -303,8 +362,10 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-16">
             {data.actionSection.features.map((feature, index) => (
               <a href={feature.url} className="block bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm text-center" key={index}>
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm sm:text-base">{feature.description}</p>
+                <Button className={`font-bold px-8 py-6 bg-blue-600 text-white ${feature.size === "large" ? "text-lg" : "text-base"}`}>
+                  {feature.title}
+                </Button>
+                <p className="text-gray-800 text-sm sm:text-base mb-4 mt-4">{feature.description}</p>
               </a>
             ))}
           </div>
