@@ -7,7 +7,6 @@ const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
 const discordUrl = "https://discord.com/invite/QATA3b9TTa";
-const moonlightUrl = "https://moonlight-stream.org/";
 
 export default function Home() {
   const data = {
