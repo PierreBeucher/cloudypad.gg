@@ -185,7 +185,12 @@ export default function Home() {
         {
           "question": "Will my existing game saves be available on Cloudy Pad ?",
           "answer": "Most Steam games support Cloud sync - in which case your saves will be available on Cloudy Pad after you installed your game."
+        },
+        {
+          "question": "Are Controllers supported ?",
+          "answer": "Yes, controllers are supported (Xbox, Sony DualSense / DualShock, etc.). You can use your controller to play your games on Cloudy Pad. "
         }
+
       ]
     },
     "footer": {
