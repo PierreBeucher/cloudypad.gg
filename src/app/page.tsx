@@ -45,7 +45,7 @@ export default function Home() {
           },
           {
             "title": "Connect and install your Steam games",
-            "content": "Install and play your own Steam games - all your library is available !"
+            "content": "Connect to instance to access your remote desktop with Steam pre-installed and download your own Steam games - all your library is available !"
           },
           {
             "title": "Enjoy Gaming in high resolution !",
@@ -298,10 +298,10 @@ export default function Home() {
 
       {/* Tagline Section */}
       <section className="py-12 sm:py-20 md:py-24 bg-gray-700 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restrictions</p> 
+        <div className="w-full xl:w-3/5 mx-auto px-4">
+          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restrictions: all your library is available, you are not restricted by a pre-defined game list !</p> 
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Play anywhere from any device: MacOS, Windows, Linux, SmartTV, Phone, Tablet...</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 1080p 60+ FPS gaming, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
           <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10 mt-6">
             <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
