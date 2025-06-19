@@ -299,7 +299,7 @@ export default function Home() {
       {/* Tagline Section */}
       <section className="py-12 sm:py-20 md:py-24 bg-gray-700 text-white text-center">
         <div className="w-full xl:w-3/5 mx-auto px-4">
-          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restrictions: all your library is available, you are not restricted by a pre-defined game list !</p> 
+          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restriction: all your library is available, you are not limited to a pre-defined game list !</p> 
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Play anywhere from any device: MacOS, Windows, Linux, SmartTV, Phone, Tablet...</p>
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
