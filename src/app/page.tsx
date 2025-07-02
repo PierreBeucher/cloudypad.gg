@@ -7,17 +7,26 @@ const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
 const discordUrl = "https://discord.com/invite/QATA3b9TTa";
+const pricingUrl = "https://app.cloudypad.gg/pricing";
 
 export default function Home() {
   const data = {
     "name": "Cloudy Pad",
     "navLinks": [
       {
-        "title": "🎮 <b>Start Playing</b>",
+        "title": "🎮 <b>Log in or Sign up</b>",
         "url": callToActionUrl,
       },
       {
-        "title": "📖 Documentation",
+        "title": "FAQ",
+        "url": "#faq",
+      },
+      {
+        "title": "Pricing",
+        "url": pricingUrl,
+      },
+      {
+        "title": "Documentation",
         "url": documentationUrl,
       },
       {
@@ -212,21 +221,23 @@ export default function Home() {
   };
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visibleLinks, setVisibleLinks] = useState([0, 1, 2, 3]);
+  const [visibleLinks, setVisibleLinks] = useState([0, 1, 2, 3, 4, 5]);
 
   useEffect(() => {
     function handleResize() {
       const width = window.innerWidth;
-      if (width >= 800) {
-        setVisibleLinks([0, 1, 2, 3]); // All
-      } else if (width >= 700) {
-        setVisibleLinks([0, 1, 2]); // Hide Discord
+      if (width >= 1000) {
+        setVisibleLinks([0, 1, 2, 3, 4, 5]); // All
+      } else if (width >= 900) {
+        setVisibleLinks([0, 1, 2, 3, 4]); // Hide Discord
+      } else if (width >= 750) {
+        setVisibleLinks([0, 1, 2, 3]); // Hide GitHub, Discord
       } else if (width >= 600) {
-        setVisibleLinks([0, 1]); // Hide GitHub, Discord
-      } else if (width >= 400) {
-        setVisibleLinks([0]); // Only Start Playing
+        setVisibleLinks([0, 1, 2]); // Only Start Playing
+      } else if (width >= 500) {
+        setVisibleLinks([0, 1]); // Only Start Playing
       } else {
-        setVisibleLinks([]); // Hide all
+        setVisibleLinks([0]); // Only Start Playing
       }
     }
     handleResize();
@@ -248,8 +259,16 @@ export default function Home() {
         <div className="flex items-center space-x-6">
           {alwaysVisible.map(index => {
             const link = data.navLinks[index];
+
+            // when link starts with #, it's an internal link directly in the page
+            const isInternalLink = link.url.startsWith('#');
             return (
-              <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-lg">
+              <a 
+                href={link.url} 
+                key={index} 
+                {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                className="flex items-center space-x-2 text-lg"
+              >
                 {link.imageLink && <img src={link.imageLink} width={32} height={32} />}
                 <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
               </a>
@@ -268,12 +287,14 @@ export default function Home() {
                 <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
                   {hiddenLinks.map(index => {
                     const link = data.navLinks[index];
+
+                    // when link starts with #, it's an internal link directly in the page
+                    const isInternalLink = link.url.startsWith('#');
                     return (
                       <a
                         href={link.url}
                         key={index}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                         className="flex items-center space-x-2 p-2 border-b last:border-b-0 hover:bg-gray-100"
                       >
                         {link.imageLink && <img src={link.imageLink} width={25} height={25} />}
@@ -339,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="faq" className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{data.faq.title}</h2>
