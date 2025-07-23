@@ -181,7 +181,7 @@ export default function Home() {
         },
         {
           "question": "Do you offer a free trial?",
-          "answer": `During the Beta new users are elligible to <b>5 hours of free trial</b>. Just <b><a href='${callToActionUrl}'>Create an account</a></b> and follow the instructions to get your free trial !`
+          "answer": `During the Beta new users are elligible to a few hours of <b>free trial</b>. Just <b><a href='${callToActionUrl}'>Create an account</a></b> and follow the instructions to get your free trial !`
         },
         {
           "question": "What games are supported?",
@@ -323,7 +323,7 @@ export default function Home() {
           <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restriction: all your library is available, you are not limited to a pre-defined game list !</p> 
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Play anywhere from any device: MacOS, Windows, Linux, SmartTV, Phone, Tablet...</p>
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get up to 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
           <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10 mt-6">
             <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
           </Button>
