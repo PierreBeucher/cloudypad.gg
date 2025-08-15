@@ -53,8 +53,8 @@ export default function Home() {
             "content": "Choose from a range of powerful cloud machines matching your needs and budget"
           },
           {
-            "title": "Connect and install your Steam games",
-            "content": "Connect to instance to access your remote desktop with Steam pre-installed and download your own Steam games - all your library is available !"
+            "title": "Connect and install your Steam, GOG or Epic games",
+            "content": "Connect to instance to access your remote desktop with Steam, GOG and Epic launchers pre-installed and download your own games - all your library is available !"
           },
           {
             "title": "Enjoy Gaming in high resolution !",
@@ -319,10 +319,12 @@ export default function Home() {
 
       {/* Tagline Section */}
       <section className="py-12 sm:py-20 md:py-24 bg-gray-700 text-white text-center">
-        <div className="w-full xl:w-3/5 mx-auto px-4">
-          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">🎮 Play your Steam games without restriction: all your library is available, you are not limited to a pre-defined game list !</p> 
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Play anywhere from any device: MacOS, Windows, Linux, SmartTV, Phone, Tablet...</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end cloud GPUs — no expensive PC or hardware needed</p>
+        <div className="w-full xl:w-4/5 mx-auto px-4">
+          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl">🎮 Your own <b>Steam</b>, <b>GOG</b> and <b>Epic</b> games on <b>powerful Cloud machines</b></p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Your entire game library available, no pre-defined game list !</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end Cloud machines and GPUs</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>MacOS</b>, <b>Windows</b>, <b>Linux</b>, SmartTV, Phone, Tablet... Play anywhere from any device !</p>
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Workd with low-end devices, no expensive PC or hardware needed</p>
           <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get up to 5 hours Free Trial by <a href={callToActionUrl} className="underline">Joining the Beta</a> !</b></p>
           <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10 mt-6">
             <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
