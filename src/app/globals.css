@@ -6,6 +6,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer components {
+  .link {
+    @apply transition-colors;
+    color: #4000a3;
+  }
+  .link:hover {
+    color: #00d4c4;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

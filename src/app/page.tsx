@@ -62,7 +62,7 @@ export default function Home() {
           },
           {
             "title": "Join the Community",
-            "content": "Get support directly from the Founder and the community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b>"
+            "content": `Get support directly from the Founder and the community on <b><a href='${discordUrl}' class='link'>Discord</a></b> and <b><a href='${githubUrl}' class='link'>GitHub</a></b>`
           }
         ]
       },
@@ -71,7 +71,7 @@ export default function Home() {
         "descriptions": [
           {
             "title": "Deploy your own instance",
-            "content": `<b><a href='${githubUrl}'>Cloudy Pad CLI</a></b> is a Free and Open Source tool to deploy on your own Cloud provider account`
+            "content": `<b><a href='${githubUrl}' class='link'>Cloudy Pad CLI</a></b> is a Free and Open Source tool to deploy on your own Cloud provider account`
           },
           {
             "title": "Supports various Cloud providers",
@@ -79,11 +79,11 @@ export default function Home() {
           },
           {
             "title": "Get Support from the Community",
-            "content": `Join our community on <b><a href='${discordUrl}'>Discord</a></b> and <b><a href='${githubUrl}'>GitHub</a></b> to get help setting up your instance`
+            "content": `Join our community on <b><a href='${discordUrl}' class='link'>Discord</a></b> and <b><a href='${githubUrl}' class='link'>GitHub</a></b> to get help setting up your instance`
           },
           {
             "title": "Based on Open Source solutions",
-            "content": "Cloudy Pad is based on Open Source solutions like <b><a href='https://github.com/moonlight-stream'>Moonlight</a></b> and <b><a href='https://github.com/LizardByte/Sunshine'>Sunshine</a></b>"
+            "content": "Cloudy Pad is based on Open Source solutions like <b><a href='https://github.com/moonlight-stream' class='link'>Moonlight</a></b> and <b><a href='https://github.com/LizardByte/Sunshine' class='link'>Sunshine</a></b>"
           },
         ]
       },
@@ -173,7 +173,7 @@ export default function Home() {
       "questions": [
         {
           "question": "What are the requirements to use Cloudy Pad?",
-          "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/'>Moonlight client</a></b>, and a Steam account with your games."
+          "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/' class='link'>Moonlight client</a></b>, and a Steam account with your games."
         },
         {  
           "question": "Do I need a powerful machine or a gaming PC to use Cloudy Pad?",
@@ -181,11 +181,11 @@ export default function Home() {
         },
         {
           "question": "Do you offer a free trial?",
-          "answer": `During the Beta new users are elligible to a few hours of <b>free trial</b>. Just <b><a href='${callToActionUrl}'>Create an account</a></b> and follow the instructions to get your free trial !`
+          "answer": `During the Beta new users are elligible to a few hours of <b>free trial</b>. Just <b><a href='${callToActionUrl}' class='link'>Create an account</a></b> and follow the instructions to get your free trial !`
         },
         {
           "question": "What games are supported?",
-          "answer": "Any Steam game which works natively on Linux. Vast majority of Windows games are supported with Proton (a Steam compatibility layer which is also used by the Steam Deck). See <b><a href='https://www.protondb.com/'>ProtonDB</a></b> for a list of supported Windows games."
+          "answer": "Any Steam, Epic or GOG game working on Linux or with Proton. <b>Vast majority of Windows games are supported</b>. See <b><a href='https://www.protondb.com/' class='link'>ProtonDB</a></b> for a list of supported Windows games."
         },
         {
           "question": "Are my game data and saves games persisted across sessions?",
