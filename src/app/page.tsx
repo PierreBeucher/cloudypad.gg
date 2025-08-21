@@ -180,7 +180,7 @@ export default function Home() {
       <nav className="w-full bg-background border-b border-border">
         <div className="flex flex-wrap items-center justify-between p-4 max-w-7xl mx-auto">
         <div className="flex flex-col items-center space-y-1">
-          <img src="/crafteo-logo-transparent.png" alt="Cloudy Pad Logo" className="h-8 w-8" />
+          <Image src="/crafteo-logo-transparent.png" alt="Cloudy Pad Logo" width={32} height={32} />
           <span className="text-xl font-bold tracking-wider text-neon-blue text-center">{data?.name}</span>
         </div>
         <div className="flex items-center space-x-6">
@@ -197,8 +197,8 @@ export default function Home() {
                 className="cyberpunk-card neon-white neon-border transition-all duration-300 px-3 py-2 text-lg"
               >
                 <div className="flex items-center space-x-2">
-                  {link.imageLink && <img src={link.imageLink} width={20} height={20} />}
-                  {link.useIcon === "github" && <img src="/github.svg" className="w-5 h-5 filter invert" />}
+                  {link.imageLink && <Image src={link.imageLink} alt={link.title} width={20} height={20} />}
+                  {link.useIcon === "github" && <Image src="/github.svg" alt="GitHub" width={20} height={20} className="filter invert" />}
                   <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
                 </div>
               </a>
@@ -228,8 +228,8 @@ export default function Home() {
                         className="cyberpunk-card neon-border transition-all duration-300 p-2 m-1 text-sm"
                       >
                         <div className="flex items-center space-x-2">
-                          {link.imageLink && <img src={link.imageLink} width={20} height={20} />}
-                          {link.useIcon === "github" && <img src="/github.svg" className="w-5 h-5 filter invert" />}
+                          {link.imageLink && <Image src={link.imageLink} alt={link.title} width={20} height={20} />}
+                          {link.useIcon === "github" && <Image src="/github.svg" alt="GitHub" width={20} height={20} className="filter invert" />}
                           <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
                         </div>
                       </a>
