@@ -12,6 +12,14 @@ export default {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+  			neon: {
+  				blue: '#00f2ff',
+  				green: '#00ff8b',
+  				red: '#ff355e',
+  				purple: '#bf00ff',
+  				white: '#ffffff',
+  				yellow: '#ffff00',
+  			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -56,6 +64,14 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		boxShadow: {
+  			'neon-blue': '0 0 10px #00f2ff, 0 0 20px #00f2ff',
+  			'neon-green': '0 0 10px #00ff8b, 0 0 20px #00ff8b',
+  			'neon-red': '0 0 10px #ff355e, 0 0 20px #ff355e',
+  			'neon-purple': '0 0 10px #bf00ff, 0 0 20px #bf00ff',
+  			'neon-white': '0 0 10px #ffffff, 0 0 20px #ffffff',
+  			'neon-yellow': '0 0 10px #ffff00, 0 0 20px #ffff00',
+  		},
   		keyframes: {
   			'accordion-down': {
   				from: {
@@ -72,11 +88,22 @@ export default {
   				to: {
   					height: '0'
   				}
+  			},
+  			'pulse-neon': {
+  				'0%, 100%': {
+  					opacity: '1',
+  					boxShadow: '0 0 10px currentColor, 0 0 20px currentColor'
+  				},
+  				'50%': {
+  					opacity: '0.8',
+  					boxShadow: '0 0 15px currentColor, 0 0 30px currentColor'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'pulse-neon': 'pulse-neon 2s infinite'
   		}
   	}
   },

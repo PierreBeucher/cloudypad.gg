@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
+import { Library, Zap, Wrench, Gamepad2, MonitorSmartphone, LaptopMinimalCheck, Boxes } from "lucide-react";
 
 const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
@@ -11,7 +11,7 @@ const pricingUrl = "https://app.cloudypad.gg/pricing";
 
 export default function Home() {
   const data = {
-    "name": "Cloudy Pad",
+    "name": "CLOUDY PAD",
     "navLinks": [
       {
         "title": "🎮 <b>Log in or Sign up</b>",
@@ -32,7 +32,7 @@ export default function Home() {
       {
         "title": "GitHub",
         "url": githubUrl,
-        "imageLink": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+        "useIcon": "github"
       },
       {
         "title": "Discord",
@@ -41,8 +41,8 @@ export default function Home() {
       }
     ],
     "heroSection": {
-      "title": "Cloudy Pad",
-      "subtitle": "Play on Your Own Terms",
+      "title": "CLOUDY PAD",
+      "subtitle": "Play On Your Own Terms",
     },
     "features": [
       {
@@ -53,12 +53,12 @@ export default function Home() {
             "content": "Choose from a range of powerful cloud machines matching your needs and budget"
           },
           {
-            "title": "Connect and install your Steam, GOG or Epic games",
-            "content": "Connect to instance to access your remote desktop with Steam, GOG and Epic launchers pre-installed and download your own games - all your library is available !"
+            "title": "Connect and install your games",
+            "content": "Connect to instance to access your remote desktop. Steam, GOG, Epic and more launchers are pre-installed. Download your own games and start playing, your entire library is available !"
           },
           {
-            "title": "Enjoy Gaming in high resolution !",
-            "content": "The game runs on your powerful cloud machine and streams at home to your device"
+            "title": "Enjoy Playing in High Resolution",
+            "content": "The game runs on your powerful cloud machine and streams at home to your device. As simple as watching a YouTube video !"
           },
           {
             "title": "Join the Community",
@@ -67,7 +67,7 @@ export default function Home() {
         ]
       },
       {
-        "title": "Free & Open Source DIY solution 🐧",
+        "title": "Also available as a Free & Open Source DIY solution",
         "descriptions": [
           {
             "title": "Deploy your own instance",
@@ -87,87 +87,8 @@ export default function Home() {
           },
         ]
       },
-      // {
-      //   "title": "🌥️ Deploy Anywhere in the Cloud",
-      //   "descriptions": [
-      //     {
-      //       "title": "Direct Cloud Deployment",
-      //       "content": "Deploy directly on <b>AWS</b>, <b>Azure</b>, <b>Google Cloud</b>, or <b>Paperspace</b>."
-      //     },
-      //     {
-      //       "title": "As powerful as you need",
-      //       "content": "Deploy <b>powerful instances</b> using any <b>GPU</b>, <b>Disk size</b> and <b>CPU/RAM</b>."
-      //     },
-      //     {
-      //       "title": "Spot Instances",
-      //       "content": "Use Spot instances for <b>up to 90% cheaper instances.</b>"
-      //     },
-      //     {
-      //       "title": "Stay in Control, pay by the hour",
-      //       "content": "Play up to <b>30 hours</b> per month for <b>less than 15$</b>."
-      //     },
-      //   ]
-      // },
-      // {
-      //   "title": "🪄 Turn your Desktop / Server into a Cloud Gaming instance",
-      //   "descriptions": [
-      //     { 
-      //       "bullet": "ℹ️",
-      //       "title": "Coming soon !",
-      //       "content": "This feature is being implemented and should land in a few weeks."
-      //     },
-      //     {
-      //       "title": "Local deployment",
-      //       "content": "Transform your home Desktop into a remote gaming instance."
-      //     },
-      //     {
-      //       "title": "Remote deployment via SSH",
-      //       "content": "Make your remote server into a Cloud Gaming instance."
-      //     },
-  
-      //   ]
-      // },
-      // {
-      //   "title": "⚡ Cloudy Pad Gamer: Managed Solution",
-      //   "descriptions": [
-      //     {
-      //       "title": "Same experience, Lower price",
-      //       "content": "Cloudy Pad Gamer offer a premium, managed solution based on Cloudy Pad Core. The same experience for a fraction of the price."
-      //     },
-      //     {
-      //       "title": "No technical skills required",
-      //       "content": "Deploy your Cloud Gaming instances in minutes on our managed solution"
-      //     },
-      //     {
-      //       "title": "Advanced features",
-      //       "content": "Auto stop inactive instances to avoid overspending, billing alerts, security, and more !"
-      //     },
-      //   ]
-      // }
     ],
-    "actionSection": {
-      "title": "Get Started with Cloudy Pad",
-      "features": [
-        {
-          "title": "DIY with Cloudy Pad CLI",
-          "description": "Use Cloudy Pad CLI, a Free and Open Source project to deploy your own instance",
-          "url": documentationUrl,
-          "size": "small"
-        },
-        {
-          "title": "Start Playing Now",
-          "description": "Deploy your instance in a few clicks and play your own Steam games",
-          "url": callToActionUrl,
-          "size": "large"
-        },
-        {
-          "title": "Join the Community",
-          "description": "Join our community on Discord to get support and help from other Cloudy Pad users.",
-          "url": discordUrl,
-          "size": "small"
-        },
-      ],
-    },
+
     "faq": {
       "title": "FAQ",
       "questions": [
@@ -175,9 +96,9 @@ export default function Home() {
           "question": "What are the requirements to use Cloudy Pad?",
           "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/' class='link'>Moonlight client</a></b>, and a Steam account with your games."
         },
-        {  
-          "question": "Do I need a powerful machine or a gaming PC to use Cloudy Pad?",
-          "answer": "<b>No, you don't need a powerful machine or a gaming PC to use Cloudy Pad</b>. You game will run on a powerful cloud machine and streams at home to your device, even small devices like phones, tablets or low-end laptops."
+                {
+          "question": "Do I need a powerful machine or gaming PC for cloud gaming?",
+          "answer": "<b>No, you don't need a powerful machine or gaming PC for cloud gaming with CloudyPad</b>. Your games run on our powerful cloud gaming servers and stream to any device - phones, tablets, Chromebooks, or low-end laptops work perfectly."
         },
         {
           "question": "Do you offer a free trial?",
@@ -188,18 +109,23 @@ export default function Home() {
           "answer": "Any Steam, Epic or GOG game working on Linux or with Proton. <b>Vast majority of Windows games are supported</b>. See <b><a href='https://www.protondb.com/' class='link'>ProtonDB</a></b> for a list of supported Windows games."
         },
         {
+          "question": "Are Controllers supported ?",
+          "answer": "Yes, controllers are supported (Xbox, Sony DualSense / DualShock, etc.). You can use your controller to play your games on Cloudy Pad. "
+        },
+        {
           "question": "Are my game data and saves games persisted across sessions?",
           "answer": "Of course ! Your game data and saves are persisted when you stop your instance. As most Steam games support Cloud sync, you'll also be able to pick up where you left off from another machine."
         },
         {
           "question": "Will my existing game saves be available on Cloudy Pad ?",
-          "answer": "Most Steam games support Cloud sync - in which case your saves will be available on Cloudy Pad after you installed your game."
+          "answer": "Most games support Cloud sync - in which case your saves will be available on Cloudy Pad after you installed your game. If your game doesn't support Cloud sync, you can still import your saves from your local machine."
         },
         {
-          "question": "Are Controllers supported ?",
-          "answer": "Yes, controllers are supported (Xbox, Sony DualSense / DualShock, etc.). You can use your controller to play your games on Cloudy Pad. "
-        }
-
+          "question": "What game launchers are supported ?",
+          "answer": "Steam, Epic, GOG, Amazon Prime Games are supported with their respective clients available natively on Cloudy Pad. " +
+           "You can also install additional game runners thanks to <b><a href='https://lutris.net/' class='link'>Lutris</a></b>."
+        },        
+        
       ]
     },
     "footer": {
@@ -251,10 +177,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Responsive Navigation */}
-      <nav className="flex flex-wrap items-center justify-between p-4 max-w-7xl mx-auto">
-        <div className="flex items-center space-x-2">
-          <img src="/crafteo-logo.png" alt="CloudyPad Logo" width={32} height={32} />
-          <span className="font-semibold text-xl">{data?.name}</span>
+      <nav className="w-full bg-background border-b border-border">
+        <div className="flex flex-wrap items-center justify-between p-4 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center space-y-1">
+          <img src="/crafteo-logo-transparent.png" alt="Cloudy Pad Logo" className="h-8 w-8" />
+          <span className="text-xl font-bold tracking-wider text-neon-blue text-center">{data?.name}</span>
         </div>
         <div className="flex items-center space-x-6">
           {alwaysVisible.map(index => {
@@ -267,24 +194,27 @@ export default function Home() {
                 href={link.url} 
                 key={index} 
                 {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                className="flex items-center space-x-2 text-lg"
+                className="cyberpunk-card neon-white neon-border transition-all duration-300 px-3 py-2 text-lg"
               >
-                {link.imageLink && <img src={link.imageLink} width={32} height={32} />}
-                <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+                <div className="flex items-center space-x-2">
+                  {link.imageLink && <img src={link.imageLink} width={20} height={20} />}
+                  {link.useIcon === "github" && <img src="/github.svg" className="w-5 h-5 filter invert" />}
+                  <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+                </div>
               </a>
             );
           })}
           {hiddenLinks.length > 0 && (
             <div className="relative">
               <button
-                className="text-gray-700 focus:outline-none px-2"
+                className="text-foreground hover:text-neon-blue focus:outline-none px-2 transition-colors"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle navigation"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
               </button>
               {menuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded shadow-lg z-50">
                   {hiddenLinks.map(index => {
                     const link = data.navLinks[index];
 
@@ -295,10 +225,13 @@ export default function Home() {
                         href={link.url}
                         key={index}
                         {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                        className="flex items-center space-x-2 p-2 border-b last:border-b-0 hover:bg-gray-100"
+                        className="cyberpunk-card neon-border transition-all duration-300 p-2 m-1 text-sm"
                       >
-                        {link.imageLink && <img src={link.imageLink} width={25} height={25} />}
-                        <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+                        <div className="flex items-center space-x-2">
+                          {link.imageLink && <img src={link.imageLink} width={20} height={20} />}
+                          {link.useIcon === "github" && <img src="/github.svg" className="w-5 h-5 filter invert" />}
+                          <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
+                        </div>
                       </a>
                     );
                   })}
@@ -307,45 +240,133 @@ export default function Home() {
             </div>
           )}
         </div>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="w-full bg-gray-800 text-white py-20 sm:py-24 md:py-32" style={{ backgroundImage: "url('/gamepad-cloud-2.png')", backgroundSize: 'cover', backgroundPosition: 'center'  }}>
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">{data.heroSection.title}</h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{data.heroSection.subtitle}</h2>
+      <section className="w-full bg-background text-foreground py-10 sm:py-12 md:py-12 relative overflow-hidden border-b border-border" style={{ backgroundImage: "url('/gamepad-cloud-2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/80"></div>
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">{data.heroSection.title}</h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-200">{data.heroSection.subtitle}</h2>
         </div>
       </section>
 
       {/* Tagline Section */}
-      <section className="py-12 sm:py-20 md:py-24 bg-gray-700 text-white text-center">
-        <div className="w-full xl:w-4/5 mx-auto px-4">
-          <p className="mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl">🎮 Your own <b>Steam</b>, <b>GOG</b> and <b>Epic</b> games on <b>powerful Cloud machines</b></p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Your entire game library available, no pre-defined game list !</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">⚡ 4K, 120 FPS or 1080p, 60 FPS ? Choose your resolution and frame rate, powered by high-end Cloud machines and GPUs</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>MacOS</b>, <b>Windows</b>, <b>Linux</b>, SmartTV, Phone, Tablet... Play anywhere from any device !</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl">Workd with low-end devices, no expensive PC or hardware needed</p>
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl"><b>Get up to 5 hours Free Trial by <a href={callToActionUrl} className="link-reverse">Joining the Beta</a> !</b></p>
-          <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10 mt-6">
-            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
-          </Button>
+      <section className="py-12 sm:py-20 md:py-24 bg-background text-foreground">
+        <div className="max-w-7xl mx-auto px-4">
+          
+          {/* Description */}
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xl sm:text-2xl text-foreground max-w-6xl mx-auto">
+              <b>Play all your games anywhere, on any device - powered by high-performance Cloud GPU</b>
+            </p>
+          </div>
+
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+            
+            
+
+            {/* Game launcher */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <Boxes className="w-12 h-12 text-neon-red" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Steam, Epic, GOG, Amazon Prime Games and more</h3>
+              <p className="text-foreground text-center">
+                Play your own Steam, Epic Games, GOG, Amazon Prime Games and more in the Cloud.
+              </p>
+            </div>
+            
+            {/* Complete Game Library */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <Library className="w-12 h-12 text-neon-green" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Your Entire Game Library</h3>
+              <p className="text-foreground text-center">
+                Your entire game library is available - no pre-defined game list limitations!
+              </p>
+            </div>
+
+            {/* High Performance */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <Zap className="w-12 h-12 text-neon-yellow" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Ultra Performance</h3>
+              <p className="text-foreground text-center">
+                <b>4K, 120 FPS</b> or <b>1080p, 60 FPS</b> ? You choose ! Powered by high-end Cloud GPU. 
+              </p>
+            </div>
+
+            {/* Cross Platform */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <MonitorSmartphone className="w-12 h-12 text-neon-blue" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">All Major Platforms Supported</h3>
+              <p className="text-foreground text-center">
+                <b>MacOS</b>, <b>Windows</b>, <b>Linux</b>, SmartTV, Android, iOS, Phone, Tablet - all supported!
+              </p>
+            </div>
+
+            {/* No Hardware Required */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <LaptopMinimalCheck className="w-12 h-12 text-neon-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">No Gaming PC Needed</h3>
+              <p className="text-foreground text-center">
+                Works with <b>low-end devices</b> - no expensive PC or hardware required.
+              </p>
+            </div>
+            {/* Mods and Tools */}
+            <div className="cyberpunk-card neon-border transition-all duration-300 p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <Wrench className="w-12 h-12 text-neon-purple" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Mods, Tools and Softwares</h3>
+              <p className="text-foreground text-center">
+                Install your game mods, custom tools and any software to enhance your gaming experience.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white max-w-md mx-auto transform hover:scale-105 transition-all cursor-pointer p-6">
+              <div className="flex justify-center mb-4">
+                <Gamepad2 className="w-12 h-12 text-neon-blue" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-center text-neon-white">Start Playing Now</h3>
+              <h4 className="text-lg font-semibold mb-2 text-center text-neon-blue">Free Trial Available !</h4>
+              <p className="text-sm text-neon-white text-center">
+                <b>Get up to 5 hours free</b> by joining the Beta
+              </p>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {data.features.map((feature, index) => (
-              <div key={index} className="flex flex-col items-start gap-4 sm:gap-6 bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 w-full text-center">{feature.title}</h2>
+              <div key={index} className="cyberpunk-card transition-all duration-300 flex flex-col items-start gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 w-full text-center text-neon-white flex items-center justify-center gap-2">
+                  {feature.title}
+                </h2>
                 <div className="space-y-2 sm:space-y-4 mb-2 sm:mb-4">
                   {feature.descriptions.map((desc, i) => (
                     <div key={i} className="flex items-start gap-2 sm:gap-3">
-                      <div className="mt-1 text-green-500">✓</div>
+                      <div className="mt-1 text-neon-green">✓</div>
                       <div className="space-y-1 sm:space-y-2">
-                        <h3 className="font-semibold text-base sm:text-lg">{desc.title}</h3>
-                        <p className="text-gray-800 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
+                        <h3 className="font-semibold text-base sm:text-lg text-neon-white">{desc.title}</h3>
+                        <p className="text-foreground text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: desc.content }}></p>
                       </div>
                     </div>
                   ))}
@@ -354,25 +375,25 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button className="bg-blue-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-10">
-              <a href={callToActionUrl} target="_blank" rel="noopener noreferrer">Start Playing Now</a>
-            </Button>
+            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="inline-block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transform hover:scale-105 transition-all cursor-pointer px-8 py-4">
+              <h3 className="text-lg font-bold text-center text-neon-white">Start Playing Now</h3>
+            </a>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="faq" className="py-10 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{data.faq.title}</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-neon-white">{data.faq.title}</h2>
           </div>
 
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
             {data.faq.questions.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">{item.question}</h3>
-                <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
+              <div key={index} className="cyberpunk-card transition-all duration-300 p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-neon-white">{item.question}</h3>
+                <p className="text-foreground" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
               </div>
             ))}
           </div>
@@ -380,27 +401,39 @@ export default function Home() {
       </section>
 
       {/* Action Section */}
-      <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{data.actionSection.title}</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-neon-white">Get Started with Cloudy Pad</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-16">
-            {data.actionSection.features.map((feature, index) => (
-              <a href={feature.url} className="block bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm text-center" key={index}>
-                <Button className={`font-bold px-8 py-6 bg-blue-600 text-white ${feature.size === "large" ? "text-lg" : "text-base"}`}>
-                  {feature.title}
-                </Button>
-                <p className="text-gray-800 text-sm sm:text-base mb-4 mt-4">{feature.description}</p>
-              </a>
-            ))}
+            <a href={documentationUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
+              <h3 className="font-bold text-neon-white mb-4 text-lg">
+                DIY with Cloudy Pad CLI
+              </h3>
+              <p className="text-foreground text-sm sm:text-base">Use Cloudy Pad CLI, a Free and Open Source project to deploy your own instance</p>
+            </a>
+            
+            <a href={callToActionUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
+              <h3 className="font-bold text-neon-white mb-4 text-xl">
+                Start Playing Now
+              </h3>
+              <p className="text-foreground text-sm sm:text-base">Deploy your instance in a few clicks and play your own Steam games</p>
+            </a>
+            
+            <a href={discordUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
+              <h3 className="font-bold text-neon-white mb-4 text-lg">
+                Join the Community
+              </h3>
+              <p className="text-foreground text-sm sm:text-base">Join our community on Discord to get support and help from other Cloudy Pad users.</p>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary-foreground py-8 sm:py-12">
+      <footer className="bg-card py-8 sm:py-12 border-t border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             <div className="flex flex-col items-center sm:items-start">
@@ -411,20 +444,20 @@ export default function Home() {
                   width={32}
                   height={32}
                 />
-                <span className="font-semibold">{data?.name}</span>
+                <span className="font-semibold text-neon-blue">{data?.name}</span>
               </div>
-              <p className="text-gray-600 text-sm sm:text-base text-center sm:text-left">{data.footer.description}</p>
+              <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">{data.footer.description}</p>
             </div>
             <div></div>
             <div></div>
             <div className="flex flex-col items-center sm:items-start">
-              <h3 className="font-semibold mb-2 sm:mb-4">Social</h3>
+              <h3 className="font-semibold mb-2 sm:mb-4 text-neon-blue">Social</h3>
               <div className="flex space-x-2 sm:space-x-4 justify-center sm:justify-start w-full">
                 {data.footer.social.map((social, index) => (
                   <a
                     key={index}
                     target="_blank" href={social.url}
-                    className="text-gray-600 hover:text-gray-900 text-sm sm:text-base"
+                    className="text-muted-foreground hover:text-neon-green transition-colors text-sm sm:text-base"
                   >
                     {social.name}
                   </a>
@@ -432,11 +465,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="border-t mt-8 sm:mt-12 pt-4 sm:pt-8 text-center text-gray-600 text-xs sm:text-base">
+          <div className="border-t border-border mt-8 sm:mt-12 pt-4 sm:pt-8 text-center text-muted-foreground text-xs sm:text-base">
             <p>
               {data.footer.copyright}
               {" "}|{" "}
-              <a href="/privacy" className="underline hover:text-gray-900" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              <a href="/privacy" className="link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
             </p>
           </div>
         </div>
