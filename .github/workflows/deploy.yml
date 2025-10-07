@@ -107,16 +107,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Notify Bing IndexNow
-        run: >-
+        run: |
           INDEXNOW_KEY=$(cat ./public/indexnow-key.txt)
-          curl -X POST "https://api.indexnow.org/indexnow"
-            -H "Content-Type: application/json"
-            -d '{
-              "host": "cloudypad.gg",
-              "key": "'$INDEXNOW_KEY'",
-              "urlList": [
-                "https://cloudypad.gg/",
-                "https://cloudypad.gg/pricing",
-                "https://cloudypad.gg/privacy"
-              ]
-            }'
+          curl -v -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "{ \
+              \"host\": \"cloudypad.gg\", \
+              \"key\": \"$INDEXNOW_KEY\", \
+              \"keyLocation\": \"https://cloudypad.gg/indexnow-key.txt\", \
+              \"urlList\": [ \
+                \"https://cloudypad.gg/\", \
+                \"https://cloudypad.gg/pricing\", \
+                \"https://cloudypad.gg/privacy\" \
+              ] \
+            }"
