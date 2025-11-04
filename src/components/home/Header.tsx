@@ -9,7 +9,7 @@ function LogoComponent() {
     return <div className="flex">
         <div>
             <Image src="/crafteo-logo-transparent.png" alt="Cloudy Pad Logo" width={32} height={32} className="m-auto" />
-            <span className="text-neon-blue font-bold text-xl tracking-wider">{constants?.name}</span>
+            <div className="text-neon-blue font-bold text-md md:text-xl tracking-wider md:tracking-normal whitespace-nowrap ">{constants?.name}</div>
         </div>
     </div>;
 }
