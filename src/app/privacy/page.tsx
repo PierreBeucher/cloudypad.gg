@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">
+    <div className="min-h-screen bg-gradient-to-b  py-12">
       <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-8 text-center">Cloudy Pad - Privacy Policy</h1>
         <section className="mb-8">
