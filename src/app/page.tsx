@@ -266,7 +266,7 @@ export default function Home() {
           {/* Description */}
           <div className="text-center mb-12">
             <p className="text-4xl sm:text-4xl text-foreground max-w-6xl mx-auto">
-              <b>Play all your PC games anywhere, from any device</b>
+              <b>Play all your PC games anywhere, on any device</b>
             </p>
             <div className="justify-center mt-6">
               <CyberpunkButton href={callToActionUrl} variant="non-bold-text" className="text-xl">
@@ -285,9 +285,9 @@ export default function Home() {
               <div className="icon-container flex justify-center mb-4">
                 <MonitorSmartphone className="w-12 h-12 text-neon-blue" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Play from Mac, Windows, Linux or any system</h3>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Play on Mac, Windows, Linux or any system</h3>
               <p className="text-foreground text-center text-lg">
-                Support for a large range of device: MacOS, iOS, Apple TV, Windows, Linux, SmartTV, Android, Tablet - all supported!
+                Support for a wide range of systems: macOS, iOS, Apple TV, Windows, Linux, SmartTV, Android, Tablet...!
               </p>
             </div>
 
@@ -298,7 +298,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-center text-white">All your games on Steam, Epic, GOG and more</h3>
               <p className="text-foreground text-center text-lg">
-                No pre-defined game list limitations, Steam, GOG and Epic are available out of the box ! 
+                No catalog limitations, all your games on Steam, GOG and Epic are available out of the box ! 
                 You can also install your own games and launchers
               </p>
             </div>
@@ -309,9 +309,9 @@ export default function Home() {
               <div className="icon-container flex justify-center mb-4">
                 <Zap className="w-12 h-12 text-neon-yellow" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Ultra Performance from any device</h3>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Ultra Performance with any device</h3>
               <p className="text-foreground text-center text-lg">
-                Up to 1440p 120 FPS from any device ! No gaming PC required, play in Ultra definition from your potato laptop
+                Up to 1440p 120 FPS on any device ! No gaming PC required, play in Ultra definition with your potato laptop
               </p>
             </div>
 
