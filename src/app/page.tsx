@@ -342,8 +342,8 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-10 bg-background">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-12 max-w-3xl mx-auto">
             {data.features.map((feature, index) => (
               <div key={index} className="cyberpunk-card transition-all duration-300 flex flex-col items-start gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 w-full text-center text-neon-white flex items-center justify-center gap-2">
