@@ -123,11 +123,18 @@
   }
 
   .cyberpunk-button {
-    @apply neon-border neon-blue bg-transparent hover:bg-neon-blue/10 transition-all duration-300;
+    @apply rounded-lg border border-border/50 overflow-hidden;
+    background-color: hsl(200, 67%, 20%);
+    box-shadow: 0 0 5px rgba(0, 242, 255, 0.1);
   }
 
-  .cyberpunk-button:hover {
-    @apply animate-pulse-neon;
+  .cyberpunk-button:hover:not(:disabled) {
+    @apply shadow-neon-blue-light;
+  }
+
+  .cyberpunk-button-muted {
+    @apply rounded-lg border border-border/50 overflow-hidden;
+    background-color: hsl(200, 30%, 18%);
   }
 }
 

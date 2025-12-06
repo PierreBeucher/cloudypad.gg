@@ -71,6 +71,7 @@ export default {
   			'neon-purple': '0 0 10px #bf00ff, 0 0 20px #bf00ff',
   			'neon-white': '0 0 10px #ffffff, 0 0 20px #ffffff',
   			'neon-yellow': '0 0 10px #ffff00, 0 0 20px #ffff00',
+  			'neon-blue-light': '0 0 2px #00f2ff, 0 0 5px #00f2ff',
   		},
   		keyframes: {
   			'accordion-down': {
