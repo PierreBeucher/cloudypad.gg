@@ -95,7 +95,7 @@ export default function Home() {
       "questions": [
         {
           "question": "Where is the service available ?",
-          "answer": "Worldwide! Europe (France, Poland), America (Seattle, Chicago), Asia (Singapore, Mumbai). More locations are added regularly, keep in touch!"
+          "answer": "Worldwide! You can use Cloudy Pad anywhere in the world, you'll connect to one of our servers in: Europe (France, Poland), America (Seattle, Chicago) or Asia (Singapore, Mumbai). More locations are added regularly, keep in touch!"
         },
         {
           "question": "What are the requirements to use Cloudy Pad?",
