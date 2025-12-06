@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Library, Zap, Wrench, Gamepad2, MonitorSmartphone, LaptopMinimalCheck, Boxes } from "lucide-react";
+import { CyberpunkButton } from "@/components/ui/cyberpunk-button";
 
 const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
@@ -14,7 +15,7 @@ export default function Home() {
     "name": "CLOUDY PAD",
     "navLinks": [
       {
-        "title": "🎮 <b>Log in or Sign up</b>",
+        "title": "Login",
         "url": callToActionUrl,
       },
       {
@@ -66,32 +67,36 @@ export default function Home() {
           }
         ]
       },
-      {
-        "title": "Also available as a Free & Open Source DIY solution",
-        "descriptions": [
-          {
-            "title": "Deploy your own instance",
-            "content": `<b><a href='${githubUrl}' class='link'>Cloudy Pad CLI</a></b> is a Free and Open Source tool to deploy on your own Cloud provider account`
-          },
-          {
-            "title": "Supports various Cloud providers",
-            "content": "Play using powerful machines on AWS, Azure, Google Cloud, Paperspace or Scaleway."
-          },
-          {
-            "title": "Get Support from the Community",
-            "content": `Join our community on <b><a href='${discordUrl}' class='link'>Discord</a></b> and <b><a href='${githubUrl}' class='link'>GitHub</a></b> to get help setting up your instance`
-          },
-          {
-            "title": "Based on Open Source solutions",
-            "content": "Cloudy Pad is based on Open Source solutions like <b><a href='https://github.com/moonlight-stream' class='link'>Moonlight</a></b> and <b><a href='https://github.com/LizardByte/Sunshine' class='link'>Sunshine</a></b>"
-          },
-        ]
-      },
+      // {
+      //   "title": "Also available as a Free & Open Source DIY solution",
+      //   "descriptions": [
+      //     {
+      //       "title": "Deploy your own instance",
+      //       "content": `<b><a href='${githubUrl}' class='link'>Cloudy Pad CLI</a></b> is a Free and Open Source tool to deploy on your own Cloud provider account`
+      //     },
+      //     {
+      //       "title": "Supports various Cloud providers",
+      //       "content": "Play using powerful machines on AWS, Azure, Google Cloud, Paperspace or Scaleway."
+      //     },
+      //     {
+      //       "title": "Get Support from the Community",
+      //       "content": `Join our community on <b><a href='${discordUrl}' class='link'>Discord</a></b> and <b><a href='${githubUrl}' class='link'>GitHub</a></b> to get help setting up your instance`
+      //     },
+      //     {
+      //       "title": "Based on Open Source solutions",
+      //       "content": "Cloudy Pad is based on Open Source solutions like <b><a href='https://github.com/moonlight-stream' class='link'>Moonlight</a></b> and <b><a href='https://github.com/LizardByte/Sunshine' class='link'>Sunshine</a></b>"
+      //     },
+      //   ]
+      // },
     ],
 
     "faq": {
       "title": "FAQ",
       "questions": [
+        {
+          "question": "Where is the service available ?",
+          "answer": "Worldwide! Europe (France, Poland), America (Seattle, Chicago), Asia (Singapore, Mumbai). More locations are added regularly, keep in touch!"
+        },
         {
           "question": "What are the requirements to use Cloudy Pad?",
           "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/' class='link'>Moonlight client</a></b>, and a Steam account with your games."
@@ -190,29 +195,30 @@ export default function Home() {
             // when link starts with #, it's an internal link directly in the page
             const isInternalLink = link.url.startsWith('#');
             return (
-              <a 
-                href={link.url} 
-                key={index} 
+              <CyberpunkButton
+                key={index}
+                href={link.url}
+                variant="non-bold-text"
+                className="text-lg"
                 {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                className="cyberpunk-card neon-white neon-border transition-all duration-300 px-3 py-2 text-lg"
               >
                 <div className="flex items-center space-x-2">
                   {link.imageLink && <Image src={link.imageLink} alt={link.title} width={20} height={20} />}
                   {link.useIcon === "github" && <Image src="/github.svg" alt="GitHub" width={20} height={20} className="filter invert" />}
                   <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
                 </div>
-              </a>
+              </CyberpunkButton>
             );
           })}
           {hiddenLinks.length > 0 && (
             <div className="relative">
-              <button
-                className="text-foreground hover:text-neon-blue focus:outline-none px-2 transition-colors"
+              <CyberpunkButton
+                className="px-2 py-2"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle navigation"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-              </button>
+              </CyberpunkButton>
               {menuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded shadow-lg z-50">
                   {hiddenLinks.map(index => {
@@ -221,18 +227,19 @@ export default function Home() {
                     // when link starts with #, it's an internal link directly in the page
                     const isInternalLink = link.url.startsWith('#');
                     return (
-                      <a
-                        href={link.url}
+                      <CyberpunkButton
                         key={index}
+                        href={link.url}
+                        variant="non-bold-text"
+                        className="p-1.5 m-1 text-xs w-full"
                         {...(isInternalLink ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                        className="cyberpunk-card neon-border transition-all duration-300 p-2 m-1 text-sm"
                       >
                         <div className="flex items-center space-x-2">
                           {link.imageLink && <Image src={link.imageLink} alt={link.title} width={20} height={20} />}
                           {link.useIcon === "github" && <Image src="/github.svg" alt="GitHub" width={20} height={20} className="filter invert" />}
                           <span dangerouslySetInnerHTML={{ __html: link.title }}></span>
                         </div>
-                      </a>
+                      </CyberpunkButton>
                     );
                   })}
                 </div>
@@ -253,83 +260,69 @@ export default function Home() {
       </section>
 
       {/* Tagline Section */}
-      <section className="py-12 sm:py-20 md:py-24 bg-background text-foreground">
+      <section className="md:py-12 bg-background text-foreground">
         <div className="max-w-7xl mx-auto px-4">
           
           {/* Description */}
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xl sm:text-2xl text-foreground max-w-6xl mx-auto">
-              <b>Play all your games anywhere, on any device - powered by high-performance Cloud GPU</b>
+          <div className="text-center mb-12">
+            <p className="text-4xl sm:text-4xl text-foreground max-w-6xl mx-auto">
+              <b>Play all your PC games anywhere, on any device</b>
             </p>
+            <div className="justify-center mt-6">
+              <CyberpunkButton href={callToActionUrl} variant="non-bold-text" className="text-xl">
+                <p>Get Started with Free Trial</p>
+              </CyberpunkButton>
+            </div>
           </div>
 
+
           {/* Feature Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
             
             
-
-            {/* Game launcher */}
-            <div className="cyberpunk-card neon-border p-6">
-              <div className="icon-container flex justify-center mb-4">
-                <Boxes className="w-12 h-12 text-neon-red" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Steam, Epic, GOG, Amazon Prime Games and more</h3>
-              <p className="text-foreground text-center">
-                Play your own Steam, Epic Games, GOG, Amazon Prime Games and more in the Cloud.
-              </p>
-            </div>
-            
-            {/* Complete Game Library */}
-            <div className="cyberpunk-card neon-border p-6">
-              <div className="icon-container flex justify-center mb-4">
-                <Library className="w-12 h-12 text-neon-green" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Your Entire Game Library</h3>
-              <p className="text-foreground text-center">
-                Your entire game library is available - no pre-defined game list limitations!
-              </p>
-            </div>
-
-            {/* High Performance */}
-            <div className="cyberpunk-card neon-border p-6">
-              <div className="icon-container flex justify-center mb-4">
-                <Zap className="w-12 h-12 text-neon-yellow" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Ultra Performance</h3>
-              <p className="text-foreground text-center">
-                <b>4K, 120 FPS</b> or <b>1080p, 60 FPS</b> ? You choose ! Powered by high-end Cloud GPU. 
-              </p>
-            </div>
-
             {/* Cross Platform */}
             <div className="cyberpunk-card neon-border p-6">
               <div className="icon-container flex justify-center mb-4">
                 <MonitorSmartphone className="w-12 h-12 text-neon-blue" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">All Major Platforms Supported</h3>
-              <p className="text-foreground text-center">
-                <b>MacOS</b>, <b>Windows</b>, <b>Linux</b>, SmartTV, Android, iOS, Phone, Tablet - all supported!
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Play on Mac, Windows, Linux or any system</h3>
+              <p className="text-foreground text-center text-lg">
+                Support for a wide range of systems: macOS, iOS, Apple TV, Windows, Linux, SmartTV, Android, Tablet...!
               </p>
             </div>
 
-            {/* No Hardware Required */}
+            {/* Game launcher */}
             <div className="cyberpunk-card neon-border p-6">
               <div className="icon-container flex justify-center mb-4">
-                <LaptopMinimalCheck className="w-12 h-12 text-neon-white" />
+                <Library className="w-12 h-12 text-neon-green" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">No Gaming PC Needed</h3>
-              <p className="text-foreground text-center">
-                Works with <b>low-end devices</b> - no expensive PC or hardware required.
+              <h3 className="text-xl font-bold mb-3 text-center text-white">All your games on Steam, Epic, GOG and more</h3>
+              <p className="text-foreground text-center text-lg">
+                No catalog limitations, all your games on Steam, GOG and Epic are available out of the box ! 
+                You can also install your own games and launchers
               </p>
             </div>
+            
+            
+            {/* High Performance */}
+            <div className="cyberpunk-card neon-border p-6">
+              <div className="icon-container flex justify-center mb-4">
+                <Zap className="w-12 h-12 text-neon-yellow" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Ultra Performance with any device</h3>
+              <p className="text-foreground text-center text-lg">
+                Up to 1440p 120 FPS on any device ! No gaming PC required, play in Ultra definition with your potato laptop
+              </p>
+            </div>
+
             {/* Mods and Tools */}
             <div className="cyberpunk-card neon-border transition-all duration-300 p-6">
               <div className="icon-container flex justify-center mb-4">
                 <Wrench className="w-12 h-12 text-neon-purple" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-white">Mods, Tools and Softwares</h3>
-              <p className="text-foreground text-center">
-                Install your game mods, custom tools and any software to enhance your gaming experience.
+              <h3 className="text-xl font-bold mb-3 text-center text-white">Install your Mods and Tools</h3>
+              <p className="text-foreground text-center text-lg">
+                Install your game mods, custom tools and any software to enhance your gaming experience
               </p>
             </div>
 
@@ -337,24 +330,20 @@ export default function Home() {
 
           {/* Call to Action */}
           <div className="text-center">
-            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white max-w-md mx-auto transform hover:scale-105 transition-all cursor-pointer p-6">
-              <div className="flex justify-center mb-4">
-                <Gamepad2 className="w-12 h-12 text-neon-blue" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-center text-neon-white">Start Playing Now</h3>
-              <h4 className="text-lg font-semibold mb-2 text-center text-neon-blue">Free Trial Available !</h4>
-              <p className="text-sm text-neon-white text-center">
-                <b>Get up to 5 hours free</b> by joining the Beta
-              </p>
-            </a>
+            <CyberpunkButton href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="text-lg px-2 py-4">
+              Start Playing Now
+            </CyberpunkButton>
+            <p className="text-lg text-foreground mt-4">
+              <b>Free trial available!</b>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-10 sm:py-16 md:py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-12 max-w-3xl mx-auto">
             {data.features.map((feature, index) => (
               <div key={index} className="cyberpunk-card transition-all duration-300 flex flex-col items-start gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 w-full text-center text-neon-white flex items-center justify-center gap-2">
@@ -375,15 +364,15 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="inline-block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transform hover:scale-105 transition-all cursor-pointer px-8 py-4">
-              <h3 className="text-lg font-bold text-center text-neon-white">Start Playing Now</h3>
-            </a>
+            <CyberpunkButton href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="text-lg px-2 py-4">
+              Get Started
+            </CyberpunkButton>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-10 sm:py-16 md:py-20 bg-background">
+      <section id="faq" className="py-10 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-neon-white">{data.faq.title}</h2>
@@ -408,26 +397,26 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-16">
-            <a href={documentationUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
-              <h3 className="font-bold text-neon-white mb-4 text-lg">
+            <div className="text-center">
+              <CyberpunkButton href={documentationUrl} target="_blank" rel="noopener noreferrer" className="mb-2">
                 DIY with Cloudy Pad CLI
-              </h3>
+              </CyberpunkButton>
               <p className="text-foreground text-sm sm:text-base">Use Cloudy Pad CLI, a Free and Open Source project to deploy your own instance</p>
-            </a>
+            </div>
             
-            <a href={callToActionUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
-              <h3 className="font-bold text-neon-white mb-4 text-xl">
+            <div className="text-center">
+              <CyberpunkButton href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="mb-2">
                 Start Playing Now
-              </h3>
+              </CyberpunkButton>
               <p className="text-foreground text-sm sm:text-base">Deploy your instance in a few clicks and play your own Steam games</p>
-            </a>
+            </div>
             
-            <a href={discordUrl} className="block cyberpunk-card neon-border neon-blue shadow-neon-blue hover:shadow-neon-white transition-all duration-300 p-4 sm:p-6 md:p-8 text-center transform hover:scale-105">
-              <h3 className="font-bold text-neon-white mb-4 text-lg">
+            <div className="text-center">
+              <CyberpunkButton href={discordUrl} target="_blank" rel="noopener noreferrer" className="mb-2">
                 Join the Community
-              </h3>
+              </CyberpunkButton>
               <p className="text-foreground text-sm sm:text-base">Join our community on Discord to get support and help from other Cloudy Pad users.</p>
-            </a>
+            </div>
           </div>
         </div>
       </section>
