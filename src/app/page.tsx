@@ -94,6 +94,10 @@ export default function Home() {
       "title": "FAQ",
       "questions": [
         {
+          "question": "Where is the service available ?",
+          "answer": "Worldwide! Europe (France, Poland), America (Seattle, Chicago), Asia (Singapore, Mumbai). More locations are added regularly, keep in touch!"
+        },
+        {
           "question": "What are the requirements to use Cloudy Pad?",
           "answer": "You need a stable internet connection (minimum 10Mbps), a device to play on (Windows PC, Mac, Linux, SmartTV, Phone, or Tablet) on which you'll be able to install <b><a href='https://moonlight-stream.org/' class='link'>Moonlight client</a></b>, and a Steam account with your games."
         },
@@ -260,7 +264,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           
           {/* Description */}
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12">
             <p className="text-4xl sm:text-4xl text-foreground max-w-6xl mx-auto">
               <b>Play all your PC games anywhere, from any device</b>
             </p>
