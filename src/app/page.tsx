@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { Library, Zap, Wrench, Gamepad2, MonitorSmartphone, LaptopMinimalCheck, Boxes } from "lucide-react";
+import { Library, Zap, Wrench,MonitorSmartphone } from "lucide-react";
 import { CyberpunkButton } from "@/components/ui/cyberpunk-button";
 
 const callToActionUrl = "https://app.cloudypad.gg";
