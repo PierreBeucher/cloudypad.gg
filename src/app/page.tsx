@@ -107,7 +107,7 @@ export default function Home() {
         },
         {
           "question": "Do you offer a free trial?",
-          "answer": `During the Beta new users are elligible to a few hours of <b>free trial</b>. Just <b><a href='${callToActionUrl}' class='link'>Create an account</a></b> and follow the instructions to get your free trial !`
+          "answer": `During the Beta new users are eligible to a <b>free trial</b>. Just <b><a href='${callToActionUrl}' class='link'>Create an account</a></b> and if you're eligible your free trial will start automatically !`
         },
         {
           "question": "What games are supported?",
