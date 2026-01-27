@@ -343,7 +343,7 @@ export default function Home() {
                   <b><span className="line-through">Free trial available!</span></b>
                 </p>
                 <p className="text-lg text-muted-foreground mt-2">
-                  Sorry, we're currently out of free trials. More will come soon, check again in a few days!
+                  Sorry, we&apos;re currently out of free trials. More will come soon, check again in a few days!
                 </p>
               </div>
             ) : (
