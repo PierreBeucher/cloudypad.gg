@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Library, Zap, Wrench,MonitorSmartphone } from "lucide-react";
 import { CyberpunkButton } from "@/components/ui/cyberpunk-button";
 
+const freeTrialDisabled = true; // Set to true to disable free trial
+
 const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
 const githubUrl = "https://github.com/PierreBeucher/cloudypad";
@@ -107,7 +109,9 @@ export default function Home() {
         },
         {
           "question": "Do you offer a free trial?",
-          "answer": `During the Beta new users are eligible to a <b>free trial</b>. Just <b><a href='${callToActionUrl}' class='link'>Create an account</a></b> and if you're eligible your free trial will start automatically !`
+          "answer": freeTrialDisabled ? 
+            `During the Beta new users are eligible to a <b>free trial</b>. Just <b><a href='${callToActionUrl}' class='link'>Create an account</a></b> and if you're eligible your free trial will start automatically !` 
+            : "We offer Free Trials but we're currently out. More will come soon, check again in a few days!"
         },
         {
           "question": "What games are supported?",
@@ -270,7 +274,7 @@ export default function Home() {
             </p>
             <div className="justify-center mt-6">
               <CyberpunkButton href={callToActionUrl} variant="non-bold-text" className="text-xl">
-                <p>Get Started with Free Trial</p>
+                <p>{freeTrialDisabled ? "Get Started" : "Get Started with Free Trial"}</p>
               </CyberpunkButton>
             </div>
           </div>
@@ -333,9 +337,20 @@ export default function Home() {
             <CyberpunkButton href={callToActionUrl} target="_blank" rel="noopener noreferrer" className="text-lg px-2 py-4">
               Start Playing Now
             </CyberpunkButton>
-            <p className="text-lg text-foreground mt-4">
-              <b>Free trial available!</b>
-            </p>
+            {freeTrialDisabled ? (
+              <div className="mt-4">
+                <p className="text-lg text-foreground">
+                  <b><span className="line-through">Free trial available!</span></b>
+                </p>
+                <p className="text-lg text-muted-foreground mt-2">
+                  Sorry, we're currently out of free trials. More will come soon, check again in a few days!
+                </p>
+              </div>
+            ) : (
+              <p className="text-lg text-foreground mt-4">
+                <b>Free trial available!</b>
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -379,7 +394,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
-            {data.faq.questions.map((item, index) => (
+            {data.faq.questions
+              .filter(item => !freeTrialDisabled || !item.question.toLowerCase().includes("free trial"))
+              .map((item, index) => (
               <div key={index} className="cyberpunk-card transition-all duration-300 p-6">
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-neon-white">{item.question}</h3>
                 <p className="text-foreground" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
