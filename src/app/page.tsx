@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Library, Zap, Wrench,MonitorSmartphone } from "lucide-react";
 import { CyberpunkButton } from "@/components/ui/cyberpunk-button";
 
-const freeTrialDisabled = true; // Set to true to disable free trial
+const freeTrialDisabled = false; // Set to true to disable free trial
 
 const callToActionUrl = "https://app.cloudypad.gg";
 const documentationUrl = "https://docs.cloudypad.gg";
