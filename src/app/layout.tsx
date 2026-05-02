@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Play your own Steam, Epic, GOG and more in the Cloud - Cloudy Pad",
-  description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware. Free trial available!",
+  description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware.",
   keywords: "cloud gaming, steam cloud gaming, epic cloud gaming, linux cloud gaming, gog cloud gaming, macos gaming, game streaming, sunshine, moonlight",
   openGraph: {
     title: "Play your own Steam, Epic, GOG and more in the Cloud - Cloudy Pad",
-    description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware. Free trial available!",
+    description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware.",
     type: "website",
     url: "https://cloudypad.gg",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Play your own Steam, Epic, GOG and more in the Cloud - Cloudy Pad",
-    description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware. Free trial available!",
+    description: "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware.",
     images: ["/gamepad-cloud-2.png"]
   },
   robots: {
@@ -58,14 +58,13 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "CloudyPad",
-    "description": "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware. Free trial available!",
+    "description": "Cloud gaming platform for Steam, Epic, GOG and more. Play your favorite games on any device without expensive hardware.",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser, Windows, Mac, Linux, iOS, Android",
     "offers": {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free trial available"
+      "url": "https://app.cloudypad.gg/pricing",
+      "description": "Subscription plans available on our pricing page"
     },
     "creator": {
       "@type": "Organization",
